@@ -1,0 +1,7 @@
+#!name=bnhy
+#!desc=修改合约余额
+
+[Script]
+bnhy= type=http-response,pattern=futures\/v5\/private\/future\/user-data\/user-balance,requires-body=1,script-path=https://raw.githubusercontent.com/yinqf/myStatic/main/bn.js
+[MITM]
+hostname= *
