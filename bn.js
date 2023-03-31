@@ -35,6 +35,7 @@ if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
     }
   })
   $done({ body: JSON.stringify(body) })
+  
 }else if(url.indexOf('asset/v2/private/asset-service/wallet/balance') !== -1){
   var body = JSON.parse($response.body)
   var dataList = body.data;
@@ -49,6 +50,30 @@ if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
     }
   })
   $done({ body: JSON.stringify(body) })
+  
+}else if(url.indexOf('asset/v3/private/asset-service/asset/get-user-asset') !==-1){
+  var body = JSON.parse($response.body)
+  var dataList = body.data;
+  dataList.forEach((item,index)=>{
+    if(item.asset == 'USDT'){
+      //现货界面，现货USDT数量
+      item.free = uBalance;
+    }
+    if(item.asset == 'BTC'){
+      //现货界面，现货BTC数量
+      item.free = btcBalance;
+    }
+    if(item.asset == 'ETH'){
+      //现货界面，现货ETH数量
+      item.free = ethBalance;
+    }
+    if(item.asset == 'BNB'){
+      //现货界面，现货BNB数量
+      item.free = bnbBalance;
+    }
+  })
+  $done({ body: JSON.stringify(body) })
+  
 }else {
   $done({})
 }
