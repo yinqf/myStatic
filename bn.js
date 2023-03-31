@@ -6,7 +6,7 @@ if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
   var dataList = body.data;
   dataList.forEach((item,index)=>{
     if(item.asset == 'USDT'){
-      var balance = '1000000';
+      var balance = '5000000';
       item.maxWithdrawAmount = balance;
       item.walletBalance = balance;
       item.crossWalletBalance = balance;
