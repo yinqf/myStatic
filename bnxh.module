@@ -1,0 +1,7 @@
+#!name=bnxh
+#!desc=修改现货余额
+
+[Script]
+bnhy= type=http-response,pattern=asset\/v2\/private\/asset-service\/wallet\/balance,requires-body=1,script-path=https://raw.githubusercontent.com/yinqf/myStatic/main/bn.js
+[MITM]
+hostname= *
