@@ -1,17 +1,23 @@
 var body = $response.body
 var url = $request.url
 
+var balance = '251000';
+var btcPrice = '27913';
+var btcNum = Number(balance)/Number(btcPrice);
 if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
   var body = JSON.parse($response.body)
   var dataList = body.data;
   dataList.forEach((item,index)=>{
     if(item.asset == 'USDT'){
-      var balance = '251000';
-      //账户或钱包的最大可提现金额
+      //合约钱包最大可划转金额
       item.maxWithdrawAmount = balance;
+      //合约钱包余额
       item.walletBalance = balance;
+      //逐仓合约钱包余额
       item.crossWalletBalance = balance;
+      //钱包可用余额
       item.availableBalance = balance;
+      //保证金余额
       item.marginBalance = balance;
     }
   })
@@ -20,8 +26,9 @@ if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
   var body = JSON.parse($response.body)
   var dataList = body.data;
   dataList.forEach((item,index)=>{
-    if(item.accountType == 'FUTURE'){      
-      item.balance = "35.49749742";
+    if(item.accountType == 'FUTURE'){
+      //账户总览界面，合约余额，btc数量
+      item.balance = btcNum.toFixed(8);
     }
   })
   $done({ body: JSON.stringify(body) })
