@@ -1,8 +1,11 @@
 var body = $response.body
 var url = $request.url
 
+//合约余额
 var balance = '251000';
+//btc价格
 var btcPrice = '27913';
+//btc数量
 var btcNum = Number(balance)/Number(btcPrice);
 if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
   var body = JSON.parse($response.body)
