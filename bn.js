@@ -15,6 +15,15 @@ if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
     }
   })
   $done({ body: JSON.stringify(body) })
-} else {
+}else if(url.indexOf('asset/v2/private/asset-service/wallet/balance') !== -1){
+  var body = JSON.parse($response.body)
+  var dataList = body.data;
+  dataList.forEach((item,index)=>{
+    if(item.accountType == 'FUTURE'){      
+      item.balance = "35.49749742";
+    }
+  })
+  $done({ body: JSON.stringify(body) })
+}else {
   $done({})
 }
