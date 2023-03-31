@@ -4,11 +4,11 @@ var url = $request.url
 //合约USDT余额
 var balance = '1000000';
 //现货USDT数量
-var uBalance = '1000';
+var uBalance = '11230008';
 //现货BTC数量
-var btcBalance = '251000';
+var btcBalance = '1002';
 //现货ETH数量
-var ethBalance = '251000';
+var ethBalance = '12000';
 //现货BNB数量
 var bnbBalance = '251000';
 //btc价格
