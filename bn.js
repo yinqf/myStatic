@@ -1,7 +1,7 @@
 var body = $response.body
 var url = $request.url
 
-if (url == 'https://www.binance.com/bapi/futures/v5/private/future/user-data/user-balance') {
+if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
   var body = JSON.parse($response.body)
   var dataList = body.data;
   dataList.forEach((item,index)=>{
