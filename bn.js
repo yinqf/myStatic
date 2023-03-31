@@ -7,6 +7,7 @@ if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
   dataList.forEach((item,index)=>{
     if(item.asset == 'USDT'){
       var balance = '251000';
+      /*账户或钱包的最大可提现金额*/
       item.maxWithdrawAmount = balance;
       item.walletBalance = balance;
       item.crossWalletBalance = balance;
