@@ -13,10 +13,14 @@ var ethBalance = '251000';
 var bnbBalance = '251000';
 //btc价格
 var btcPrice = '27913';
+//eth价格
+var ethPrice = '1805';
+//bnb价格
+var bnbPrice = '316';
 //合约btc数量
 var btcNum = Number(balance)/Number(btcPrice);
 //现货btc数量
-var spotBtcNum = '100.000';
+var spotBtcNum = (Number(uBalance) + Number(btcBalance)*Number(btcPrice) + Number(ethBalance)*Number(ethPrice) + Number(bnbBalance)*Number(bnbPrice))/Number(btcPrice);
 if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
   var body = JSON.parse($response.body)
   var dataList = body.data;
