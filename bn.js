@@ -1,12 +1,22 @@
 var body = $response.body
 var url = $request.url
 
-//合约余额
+//合约USDT余额
 var balance = '251000';
+//现货USDT余额
+var uBalance = '251000';
+//现货BTC余额
+var btcBalance = '251000';
+//现货ETH余额
+var ethBalance = '251000';
+//现货BNB余额
+var bnbBalance = '251000';
 //btc价格
 var btcPrice = '27913';
-//btc数量
+//合约btc数量
 var btcNum = Number(balance)/Number(btcPrice);
+//现货btc数量
+var spotBtcNum = '100.000';
 if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
   var body = JSON.parse($response.body)
   var dataList = body.data;
@@ -32,6 +42,10 @@ if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
     if(item.accountType == 'FUTURE'){
       //账户总览界面，合约余额，btc数量
       item.balance = btcNum.toFixed(8);
+    }
+    if(item.accountType == 'MAIN'){
+      //账户总览界面，现货余额，btc数量
+      item.balance = spotBtcNum.toFixed(8);
     }
   })
   $done({ body: JSON.stringify(body) })
