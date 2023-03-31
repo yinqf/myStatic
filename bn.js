@@ -2,9 +2,9 @@ var body = $response.body
 var url = $request.url
 
 //合约USDT余额
-var balance = '251000';
+var balance = '1000000';
 //现货USDT数量
-var uBalance = '251000';
+var uBalance = '1000';
 //现货BTC数量
 var btcBalance = '251000';
 //现货ETH数量
