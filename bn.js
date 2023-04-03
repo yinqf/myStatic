@@ -71,6 +71,7 @@ if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
       item.balance = spotBtcNum.toFixed(8);
     }
   })
+  console.log('zl-balance:'+JSON.stringify(body))
   $done({ body: JSON.stringify(body) })
 
 }else if(url.indexOf('asset/v3/private/asset-service/asset/get-user-asset') !==-1){
