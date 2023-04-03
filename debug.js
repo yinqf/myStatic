@@ -1,23 +1,27 @@
 let url = $request.url
 let body = JSON.parse($response.body)
-
-
 console.log('url:'+url)
-console.log('body:'+$response.body)
 
-if(url.indexOf('asset/v2/private/asset-service/wallet/balance') !== -1){
-    let dataList = body.data;
-    dataList.forEach((item)=>{
-        if(item.accountType === 'FUTURE'){
-            //账户总览界面，合约余额，btc数量
-            //item.balance = btcNum.toFixed(8);
-            item.balance = '1.00004016';
-
+function callApi(url, onSuccess, onError) {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.onload = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            onSuccess(xhr.responseText);
+        } else {
+            onError(xhr.statusText);
         }
-    })
-    console.log('zl-balance:'+JSON.stringify(body))
-    $done({ body: JSON.stringify(body) })
-
-}else {
-    $done({})
+    };
+    xhr.onerror = function() {
+        onError(xhr.statusText);
+    };
+    xhr.send(null);
 }
+
+callApi("http://api.luyayun.com/coinPrice/getPrice?coinTypes=BTC,ETH,BNB",function (res) {
+    console.log('res:'+res)
+},function (err) {
+    console.log('err:'+err)
+})
+
+$done({})
