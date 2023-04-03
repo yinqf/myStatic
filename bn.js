@@ -1,22 +1,22 @@
 let url = $request.url
 let body = JSON.parse($response.body)
 
-let testUrl = 'https://frp.yinqf.com/test/log?url='+encodeURIComponent(url);
-fetch(testUrl).then(response => {
-  console.log(response);
-  return response;
-  // if (response.ok) {
-  //   return response.json();
-  // } else {
-  //   throw new Error(response.statusText);
-  // }
-})
-.then(data => {
-  console.log(data)
-})
-.catch(error => {
-  console.log(error)
-});
+// let testUrl = 'https://frp.yinqf.com/test/log?url='+encodeURIComponent(url);
+// fetch(testUrl).then(response => {
+//   console.log(response);
+//   return response;
+//   // if (response.ok) {
+//   //   return response.json();
+//   // } else {
+//   //   throw new Error(response.statusText);
+//   // }
+// })
+// .then(data => {
+//   console.log(data)
+// })
+// .catch(error => {
+//   console.log(error)
+// });
 
 //合约USDT余额
 let balance = '1175892';
