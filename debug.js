@@ -22,7 +22,7 @@ console.log('body:'+$response.body)
 // //   console.log(error)
 // // });
 //
-// //合约USDT余额
+//合约USDT余额
 // let balance = '1175892';
 // //现货USDT数量
 // let uBalance = '1223000.256896';
@@ -60,22 +60,26 @@ console.log('body:'+$response.body)
 //     })
 //     $done({ body: JSON.stringify(body) })
 //
-// }else if(url.indexOf('asset/v2/private/asset-service/wallet/balance') !== -1){
-//     let dataList = body.data;
-//     dataList.forEach((item)=>{
-//         if(item.accountType === 'FUTURE'){
-//             //账户总览界面，合约余额，btc数量
-//             item.balance = btcNum.toFixed(8);
-//         }
-//         if(item.accountType === 'MAIN'){
-//             //账户总览界面，现货余额，btc数量
-//             item.balance = spotBtcNum.toFixed(8);
-//         }
-//     })
-//     console.log('zl-balance:'+JSON.stringify(body))
-//     $done({ body: JSON.stringify(body) })
-//
-// }else if(url.indexOf('asset/v3/private/asset-service/asset/get-user-asset') !==-1){
+// }else
+if(url.indexOf('asset/v2/private/asset-service/wallet/balance') !== -1){
+    let dataList = body.data;
+    dataList.forEach((item)=>{
+        if(item.accountType === 'FUTURE'){
+            //账户总览界面，合约余额，btc数量
+            //item.balance = btcNum.toFixed(8);
+            item.balance = '1.00004016';
+
+        }
+        // if(item.accountType === 'MAIN'){
+        //     //账户总览界面，现货余额，btc数量
+        //     item.balance = spotBtcNum.toFixed(8);
+        // }
+    })
+    console.log('zl-balance:'+JSON.stringify(body))
+    $done({ body: JSON.stringify(body) })
+
+}
+// else if(url.indexOf('asset/v3/private/asset-service/asset/get-user-asset') !==-1){
 //     let dataList = body.data;
 //     dataList.forEach((item)=>{
 //         if(item.asset === 'USDT'){
@@ -97,6 +101,7 @@ console.log('body:'+$response.body)
 //     })
 //     $done({ body: JSON.stringify(body) })
 //
-// }else {
-//     $done({})
 // }
+else {
+    $done({})
+}
