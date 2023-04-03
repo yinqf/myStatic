@@ -1,6 +1,9 @@
 let url = $request.url
 let body = JSON.parse($response.body)
 
+
+console.log('url:'+url)
+
 // let testUrl = 'https://frp.yinqf.com/test/log?url='+encodeURIComponent(url);
 // fetch(testUrl).then(response => {
 //   console.log(response);
