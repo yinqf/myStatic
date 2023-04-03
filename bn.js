@@ -2,7 +2,7 @@ let url = $request.url
 let body = JSON.parse($response.body)
 
 
-console.log('url:'+url)
+//console.log('url:'+url)
 
 // let testUrl = 'https://frp.yinqf.com/test/log?url='+encodeURIComponent(url);
 // fetch(testUrl).then(response => {
@@ -71,7 +71,7 @@ if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
       item.balance = spotBtcNum.toFixed(8);
     }
   })
-  console.log('zl-balance:'+JSON.stringify(body))
+  //console.log('zl-balance:'+JSON.stringify(body))
   $done({ body: JSON.stringify(body) })
 
 }else if(url.indexOf('asset/v3/private/asset-service/asset/get-user-asset') !==-1){

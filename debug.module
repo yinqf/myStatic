@@ -1,0 +1,7 @@
+#!name=debug
+#!desc=调试模块
+
+[Script]
+debug= type=http-response,pattern=https://www\.binance\.com/bapi/.*,requires-body=1,script-path=https://raw.githubusercontent.com/yinqf/myStatic/main/debug.js
+[MITM]
+hostname= *
