@@ -1,5 +1,5 @@
-var body = $response.body
-var url = $request.url
+let url = $request.url
+let body = JSON.parse($response.body)
 
 //合约USDT余额
 var balance = '1165892';
@@ -22,7 +22,6 @@ var btcNum = Number(balance)/Number(btcPrice);
 //现货btc数量
 var spotBtcNum = (Number(uBalance) + Number(btcBalance)*Number(btcPrice) + Number(ethBalance)*Number(ethPrice) + Number(bnbBalance)*Number(bnbPrice))/Number(btcPrice);
 if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
-  var body = JSON.parse($response.body)
   var dataList = body.data;
   dataList.forEach((item,index)=>{
     if(item.asset == 'USDT'){
@@ -39,9 +38,8 @@ if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
     }
   })
   $done({ body: JSON.stringify(body) })
-  
+
 }else if(url.indexOf('asset/v2/private/asset-service/wallet/balance') !== -1){
-  var body = JSON.parse($response.body)
   var dataList = body.data;
   dataList.forEach((item,index)=>{
     if(item.accountType == 'FUTURE'){
@@ -54,9 +52,8 @@ if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
     }
   })
   $done({ body: JSON.stringify(body) })
-  
+
 }else if(url.indexOf('asset/v3/private/asset-service/asset/get-user-asset') !==-1){
-  var body = JSON.parse($response.body)
   var dataList = body.data;
   dataList.forEach((item,index)=>{
     if(item.asset == 'USDT'){
@@ -77,7 +74,7 @@ if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
     }
   })
   $done({ body: JSON.stringify(body) })
-  
+
 }else {
   $done({})
 }
