@@ -12,9 +12,9 @@ if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1
         // }
         if(item.positionSide === 'LONG' && item.symbol === 'LINKUSDT'){
             //开仓价格
-            item.entryPrice = "5.01";
+            item.entryPrice = "5.28";
             //持仓数量
-            item.positionAmount = "2693.64"
+            item.positionAmount = "269.64"
         }
     })
     $done({ body: JSON.stringify(body) })
