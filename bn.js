@@ -2,9 +2,9 @@ let url = $request.url
 let body = JSON.parse($response.body)
 
 //合约USDT余额
-let balance = '1';
+let balance = '425162.6';
 //现货USDT数量
-let uBalance = '32300.256896';
+let uBalance = '232300.256896';
 //现货BTC数量
 let btcBalance = '4.52162012';
 //现货ETH数量
@@ -12,11 +12,11 @@ let ethBalance = '14.5843';
 //现货BNB数量
 let bnbBalance = '300.125481';
 //btc价格
-let btcPrice = '30189';
+let btcPrice = '26855.2';
 //eth价格
- 出租  伊德普莱斯 = '1879.6' ;
+ 出租  伊德普莱斯 = '1679.6' ;
 //bnb价格
- 出租  Bnb31- = '236.9' ;
+ 出租  Bnb31- = '216.9' ;
 //合约btc数量
  出租  Btcnum = 数量 ( 平衡 ) / 数量 ( 布克普莱斯 ) ;
 //现货btc数量
