@@ -12,9 +12,9 @@ if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1
         // }
         if(item.positionSide === 'LONG' && item.symbol === 'BTCUSDT'){
             //开仓价格
-            item.entryPrice = "25101";
+            item.entryPrice = "37651.5";
             //持仓数量
-            item.positionAmount = "50"
+            item.positionAmount = "75"
         }
     })
     $done({ body: JSON.stringify(body) })
