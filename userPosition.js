@@ -14,7 +14,7 @@ if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1
             //开仓价格
             item.entryPrice = "28141.33";
             //持仓数量
-            item.positionAmount = "75"
+            item.positionAmount = "10"
         }
     })
     $done({ body: JSON.stringify(body) })
