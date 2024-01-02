@@ -14,7 +14,7 @@ if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1
              //开仓价格
              item.entryPrice = "0.733";
              //持仓数量
-             item.positionAmount = "322603"
+             item.positionAmount = "172603"
          }
        //  if(item.positionSide === 'LONG' && item.symbol === 'WOOUSDT'){
              //开仓价格
