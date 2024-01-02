@@ -12,7 +12,7 @@ if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1
         // }
         if(item.positionSide === 'LONG' && item.symbol === 'SEIUSDT'){
              //开仓价格
-             item.entryPrice = "0.733";
+             item.entryPrice = "0.6802";
              //持仓数量
              item.positionAmount = "172603"
          }
