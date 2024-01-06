@@ -10,12 +10,12 @@ if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1
              //持仓数量
             // item.positionAmount = "154738"
         // }
-        if(item.positionSide === 'LONG' && item.symbol === 'TIAUSDT'){
+        //if(item.positionSide === 'LONG' && item.symbol === 'TIAUSDT'){
              //开仓价格
-             item.entryPrice = "15.58";
+             //item.entryPrice = "15.58";
              //持仓数量
-             item.positionAmount = "3300"
-         }
+             //item.positionAmount = "3300"
+         //}
        //  if(item.positionSide === 'LONG' && item.symbol === 'WOOUSDT'){
              //开仓价格
            //  item.entryPrice = "0.3415";
