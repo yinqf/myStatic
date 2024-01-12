@@ -1,0 +1,7 @@
+#!name=bnQueryPositionHistory
+#!desc=修改合约历史仓位
+
+[Script]
+bnhy= type=http-response,pattern=bapi\/composite\/v1\/private\/bigdata\/finance\/futures\/query-position-history,requires-body=1,script-path=https://raw.githubusercontent.com/yinqf/myStatic/main/bn.js
+[MITM]
+hostname= *
