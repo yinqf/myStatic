@@ -10,24 +10,24 @@ if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1
              //持仓数量
              item.positionAmount = "20"
          }
-        //if(item.positionSide === 'LONG' && item.symbol === 'TIAUSDT'){
+        if(item.positionSide === 'LONG' && item.symbol === 'UMAUSDT'){
              //开仓价格
-             //item.entryPrice = "15.58";
+             item.entryPrice = "4.1";
              //持仓数量
-             //item.positionAmount = "3300"
-         //}
-       //  if(item.positionSide === 'LONG' && item.symbol === 'WOOUSDT'){
+             item.positionAmount = "22785"
+         }
+         if(item.positionSide === 'LONG' && item.symbol === 'API3USDT'){
              //开仓价格
-           //  item.entryPrice = "0.3415";
+             item.entryPrice = "2.2";
              //持仓数量
-          //   item.positionAmount = "264016"
-        // }
-        //if(item.positionSide === 'LONG' && item.symbol === 'BTCUSDT'){
+             item.positionAmount = "10375"
+         }
+        if(item.positionSide === 'LONG' && item.symbol === 'CHZUSDT'){
             //开仓价格
-            //item.entryPrice = "39548.32";
+            item.entryPrice = "0.09";
             //持仓数量
-            //item.positionAmount = "60"
-        //}
+            item.positionAmount = "35206"
+        }
     })
     $done({ body: JSON.stringify(body) })
 }else {
