@@ -24,7 +24,7 @@ if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1
          }
         if(item.positionSide === 'LONG' && item.symbol === 'CHZUSDT'){
             //开仓价格
-            item.entryPrice = "0.09";
+            item.entryPrice = "0.09011";
             //持仓数量
             item.positionAmount = "35206"
         }
