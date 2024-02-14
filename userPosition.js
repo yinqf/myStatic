@@ -10,12 +10,12 @@ if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1
              //持仓数量
              //item.positionAmount = "20"
          //}
-        if(item.positionSide === 'LONG' && item.symbol === 'CKBUSDT'){
+        //if(item.positionSide === 'LONG' && item.symbol === 'CKBUSDT'){
              //开仓价格
-             item.entryPrice = "0.008476";
+            // item.entryPrice = "0.008476";
              //持仓数量
-             item.positionAmount = "11524036"
-         }
+            // item.positionAmount = "11524036"
+        // }
          //if(item.positionSide === 'LONG' && item.symbol === 'API3USDT'){
              //开仓价格
              //item.entryPrice = "2.2";
