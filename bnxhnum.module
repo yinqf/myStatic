@@ -1,5 +1,5 @@
 #!name=bnxhnum
-#!desc=修改现货界面数量
+#!desc=修改现货界面数据
 
 [Script]
 bnxhnum= type=http-response,pattern=asset\/v3\/private\/asset-service\/asset\/get-user-asset,requires-body=1,script-path=https://raw.githubusercontent.com/yinqf/myStatic/main/bn.js

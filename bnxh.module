@@ -1,5 +1,5 @@
 #!name=bnxh
-#!desc=修改币安钱包首页数据
+#!desc=修改钱包首页数据
 
 [Script]
 bnxh= type=http-response,pattern=asset\/v2\/private\/asset-service\/wallet\/(balance|asset\?|asset-detail\?),requires-body=1,script-path=https://raw.githubusercontent.com/yinqf/myStatic/main/bn.js
