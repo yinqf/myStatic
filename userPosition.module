@@ -1,6 +1,6 @@
 #!name=userPosition
 #!desc=用户仓位
 [Script]
-bnhy= type=http-response,pattern=bapi\/futures\/v5\/private\/future\/user-data\/user-position,requires-body=1,script-path=https://raw.githubusercontent.com/yinqf/myStatic/main/userPosition.js
+userPosition= type=http-response,pattern=bapi\/futures\/v5\/private\/future\/user-data\/user-position,requires-body=1,script-path=https://raw.githubusercontent.com/yinqf/myStatic/main/userPosition.js
 [MITM]
 hostname= *
