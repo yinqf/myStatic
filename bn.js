@@ -52,7 +52,39 @@ if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
     }
   })
   $done({ body: JSON.stringify(body) })
-
+}else if(url.indexOf('asset/v2/private/asset-service/wallet/asset?') !== -1){
+  let dataList = body.data;
+  dataList.forEach((item)=>{
+    if(item.asset === 'USDT'){
+      //账户总览界面，usdt现货数量
+      item.amount = uBalance;
+    }
+    if(item.asset === 'BNB'){
+      //账户总览界面，bnb现货数量
+      item.amount = bnbBalance;
+    }
+  })
+  $done({ body: JSON.stringify(body) })
+}else if(url.indexOf('asset/v2/private/asset-service/wallet/asset-detail?') !== -1){
+  let dataList = body.data;
+  dataList.forEach((item)=>{
+    if(item.asset === 'USDT') {
+      let assetDetailsList = item.assetDetails;
+      if (assetDetailsList) {
+        console.log(assetDetailsList);
+        assetDetailsList.forEach((assetItem) => {
+          if (assetItem.accountType === 'MAIN') {
+            assetItem.amount = uBalance;
+          }
+          if (assetItem.accountType === 'FUTURE') {
+            assetItem.amount = balance;
+          }
+        })
+        console.log(assetDetailsList);
+      }
+    }
+  })
+  $done({ body: JSON.stringify(body) })
 }else if(url.indexOf('asset/v3/private/asset-service/asset/get-user-asset') !==-1){
   let dataList = body.data;
   dataList.forEach((item)=>{
