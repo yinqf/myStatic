@@ -1,7 +1,7 @@
-#!name=history
+#!name=history-req
 #!desc=修改合约盈亏分析页面（请求）
 
 [Script]
-history= type=http-request,pattern=futures\/v1\/private\/future\/user-daily-profit\/getNewUserProfitStatistic,requires-body=1,script-path=https://raw.githubusercontent.com/yinqf/myStatic/main/history-req.js
+history-req= type=http-request,pattern=futures\/v1\/private\/future\/user-daily-profit\/getNewUserProfitStatistic,requires-body=1,script-path=https://raw.githubusercontent.com/yinqf/myStatic/main/history-req.js
 [MITM]
 hostname= *
