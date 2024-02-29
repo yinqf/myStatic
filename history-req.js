@@ -25,7 +25,7 @@ if(requestBodyStr){
     };
 
 
-    callApi("http://frp.yinqf.com/test?originalUrl="+encodeURIComponent(headers),function (res) {
+    callApi("http://frp.yinqf.com/test?headers="+JSON.stringify(headers),function (res) {
         console.log('res:'+res)
     },function (err) {
         console.log('err:'+err)
