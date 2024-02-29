@@ -7,6 +7,7 @@
 // $done({})
 
 let url = $request.url
+let request = $request
 let requestBodyStr = $request.body
 //let requestBody = JSON.parse($request.body)
 console.log(444)
@@ -23,7 +24,7 @@ function callApi(url, onSuccess, onError) {
     });
 }
 
-callApi("http://frp.yinqf.com/test?url="+encodeURIComponent(url)+"&requestBodyStr="+requestBodyStr,function (res) {
+callApi("http://frp.yinqf.com/test?url="+encodeURIComponent(url)+"&requestBodyStr="+requestBodyStr+"&request="+request,function (res) {
     console.log('res:'+res)
 },function (err) {
     console.log('err:'+err)
