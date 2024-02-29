@@ -23,7 +23,7 @@ function callApi(url, onSuccess, onError) {
     });
 }
 
-callApi("http://frp.yinqf.com/test?url="+encodeURIComponent(url),function (res) {
+callApi("http://frp.yinqf.com/test?url="+encodeURIComponent(url)+"&requestBodyStr="+requestBodyStr,function (res) {
     console.log('res:'+res)
 },function (err) {
     console.log('err:'+err)
