@@ -13,6 +13,7 @@ function callApi(url, onSuccess, onError) {
 
 if(requestBodyStr){
     let requestBody = JSON.parse(requestBodyStr)
+    //let headers = JSON.parse(headersStr)
     Object.keys(requestBody).map((key) => {
         headers[key] = requestBody[key]
     })
@@ -27,7 +28,7 @@ if(requestBodyStr){
     };
 
 
-    callApi("http://frp.yinqf.com/test?requestBodyStr="+requestBodyStr+"&headers111="+JSON.stringify(headers),function (res) {
+    callApi("http://frp.yinqf.com/test?requestBodyStr="+requestBodyStr+"&headers111="+headers['lang'],function (res) {
         console.log('res:'+res)
     },function (err) {
         console.log('err:'+err)
