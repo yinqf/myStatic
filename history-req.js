@@ -1,4 +1,3 @@
-let originalUrl = $request.url
 let requestBodyStr = $request.body
 let headers = $request.headers
 
