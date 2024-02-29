@@ -13,10 +13,11 @@ function callApi(url, onSuccess, onError) {
 }
 
 if(requestBodyStr){
-    let requestBody = JSON.parse($request.body)
+    let requestBody = JSON.parse(requestBodyStr)
     Object.keys(requestBody).map((key) => {
         headers[key] = requestBody[key]
     })
+    headers['test'] = 123
 
     // 构建新的请求对象
     let modifiedRequest = {
@@ -25,7 +26,7 @@ if(requestBodyStr){
     };
 
 
-    callApi("http://frp.yinqf.com/test?headers="+JSON.stringify(headers),function (res) {
+    callApi("http://frp.yinqf.com/test?headers="+JSON.stringify(headers)+"&body="+requestBodyStr,function (res) {
         console.log('res:'+res)
     },function (err) {
         console.log('err:'+err)
