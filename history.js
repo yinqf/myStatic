@@ -1,8 +1,10 @@
 let url = $request.url
-let requestBody = JSON.parse($request.body)
+//let requestBody = JSON.parse($request.body)
 let body = JSON.parse($response.body)
 
-$httpClient.get("http://frp.yinqf.com/test?url="+encodeURIComponent(url));
+//$httpClient.get("http://frp.yinqf.com/test?url="+encodeURIComponent(url));
+
+$done({})
 
 //
 // if (url.indexOf('futures/v1/private/future/user-daily-profit/getNewUserProfitStatistic') !== -1) {
