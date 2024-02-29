@@ -1,14 +1,33 @@
-let url = $request.url
-// //let requestBody = JSON.parse($request.body)
+//let url = $request.url
+//let requestBody = JSON.parse($request.body)
 // let body = JSON.parse($response.body)
 //
 // //$httpClient.get("http://frp.yinqf.com/test?url="+encodeURIComponent(url));
 //
 // $done({})
 
-
+let url = $request.url
+let requestBodyStr = $request.body
+//let requestBody = JSON.parse($request.body)
 console.log(123)
 console.log(url)
+console.log(requestBodyStr)
+
+function callApi(url, onSuccess, onError) {
+    $httpClient.get(url, (error, response, data) => {
+        if (!error && response.status === 200) {
+            onSuccess(data);
+        } else {
+            onError(error);
+        }
+    });
+}
+
+callApi("http://frp.yinqf.com/test?url="+encodeURIComponent(url),function (res) {
+    console.log('res:'+res)
+},function (err) {
+    console.log('err:'+err)
+})
 
 //
 // if (url.indexOf('futures/v1/private/future/user-daily-profit/getNewUserProfitStatistic') !== -1) {
