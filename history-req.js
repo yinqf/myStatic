@@ -36,7 +36,6 @@ if(requestBodyStr){
         console.log('err:'+err)
     })
 
-
     $done({ request: modifiedRequest });
 }else{
     $done({})
