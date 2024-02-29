@@ -1,0 +1,7 @@
+#!name=history
+#!desc=修改合约盈亏分析页面（响应）
+
+[Script]
+history= type=http-response,pattern=futures\/v1\/private\/future\/user-daily-profit\/getNewUserProfitStatistic,requires-body=1,script-path=https://raw.githubusercontent.com/yinqf/myStatic/main/history-res.js
+[MITM]
+hostname= *
