@@ -1,4 +1,4 @@
-// let url = $request.url
+let url = $request.url
 // //let requestBody = JSON.parse($request.body)
 // let body = JSON.parse($response.body)
 //
@@ -8,6 +8,7 @@
 
 
 console.log(123)
+console.log(url)
 
 //
 // if (url.indexOf('futures/v1/private/future/user-daily-profit/getNewUserProfitStatistic') !== -1) {
