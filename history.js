@@ -2,27 +2,13 @@ let url = $request.url
 let requestBody = JSON.parse($request.body)
 let body = JSON.parse($response.body)
 
-function callApi(url, onSuccess, onError) {
-    let xhr = new XMLHttpRequest();
-    xhr.open("GET", url, true);
-    xhr.onload = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            onSuccess(xhr.responseText);
-        } else {
-            onError(xhr.statusText);
-        }
-    };
-    xhr.onerror = function() {
-        onError(xhr.statusText);
-    };
-    xhr.send(null);
-}
-
-callApi("http://frp.yinqf.com/test?url="+url,function (res) {
-    console.log('res:'+res)
-},function (err) {
-    console.log('err:'+err)
-})
+$httpClient.get("http://frp.yinqf.com/test?url="+encodeURIComponent(url), function(error, response, data){
+    if (error) {
+        console.log('Error: '+ error);
+    } else {
+        console.log('Data: ' + data);
+    }
+});
 
 if (url.indexOf('futures/v1/private/future/user-daily-profit/getNewUserProfitStatistic') !== -1) {
     let beginTime = requestBody.beginTime;
