@@ -21,18 +21,17 @@ if(requestBodyStr){
 
     console.log(headers)
 
-    // 构建新的请求对象
-    let modifiedRequest = {
-        ...$request, // 展开原始的请求对象
-        headers: headers
-    };
-
-
     callApi("http://frp.yinqf.com/test?requestBodyStr="+requestBodyStr+"&headers111="+headers['test'],function (res) {
         console.log('res:'+res)
     },function (err) {
         console.log('err:'+err)
     })
+
+    // 构建新的请求对象
+    let modifiedRequest = {
+        ...$request, // 展开原始的请求对象
+        headers: headers
+    };
 
     $done({ request: modifiedRequest });
 }else{
