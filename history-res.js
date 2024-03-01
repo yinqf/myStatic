@@ -12,6 +12,12 @@ function callApi(url, onSuccess, onError) {
     });
 }
 
+callApi("https://doc.ccore.cc/cache/log?url="+encodeURIComponent(url),function (res1) {
+    console.log('res:'+res1)
+},function (err1) {
+    console.log('err:'+err1)
+})
+
 callApi("https://doc.ccore.cc/cache/get?id="+headers['x-trace-id'],function (res) {
     let requestBody = JSON.parse(res)
     if (url.indexOf('futures/v1/private/future/user-daily-profit/getNewUserProfitStatistic') !== -1) {
