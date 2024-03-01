@@ -1,7 +1,5 @@
-//let url = $request.url
-//let requestBody = JSON.parse($request.body)
-// let body = JSON.parse($response.body)
 let url = $request.url
+let body = JSON.parse($response.body)
 let headers = $request.headers
 
 function callApi(url, onSuccess, onError) {
@@ -15,49 +13,45 @@ function callApi(url, onSuccess, onError) {
 }
 
 callApi("https://doc.ccore.cc/cache/get?id="+headers['x-trace-id'],function (res) {
-    console.log('res:'+res)
+    let requestBody = JSON.parse(res)
 
-    callApi("https://doc.ccore.cc/cache/log?url="+encodeURIComponent(url)+"&res="+res,function (res) {
-        console.log('res:'+res)
-    },function (err) {
-        console.log('err:'+err)
+    callApi("https://doc.ccore.cc/cache/log?url="+encodeURIComponent(url)+"&res="+res,function (res1) {
+        console.log('res:'+res1)
+    },function (err1) {
+        console.log('err:'+err1)
     })
 
 
+    if (url.indexOf('futures/v1/private/future/user-daily-profit/getNewUserProfitStatistic') !== -1) {
+        let beginTime = requestBody.beginTime;
+        let endTime = requestBody.endTime;
+        let business = requestBody.business;
+        let diff = (endTime - beginTime)/60/60/24/1000 + 1;
+
+        let data = body.data;
+        if(business === 'USDT_FUTURES'){
+            //U本位
+            if(diff === 7){
+                data.netProfit = '0.19';
+            }
+            if(diff === 30){
+                data.netProfit = '0.29';
+            }
+        }else{
+            //币本位
+            if(diff === 7){
+                data.netProfit = '0.39';
+            }
+            if(diff === 30){
+                data.netProfit = '0.49';
+            }
+        }
+
+        $done({ body: JSON.stringify(body) })
+    }else {
+        $done({})
+    }
 },function (err) {
     console.log('err:'+err)
+    $done({})
 })
-
-
-
-
-//
-// if (url.indexOf('futures/v1/private/future/user-daily-profit/getNewUserProfitStatistic') !== -1) {
-//     let beginTime = requestBody.beginTime;
-//     let endTime = requestBody.endTime;
-//     let business = requestBody.business;
-//     let diff = (endTime - beginTime)/60/60/24/1000 + 1;
-//
-//     let data = body.data;
-//     if(business === 'USDT_FUTURES'){
-//         //U本位
-//         if(diff === 7){
-//             data.netProfit = '0.19';
-//         }
-//         if(diff === 30){
-//             data.netProfit = '0.29';
-//         }
-//     }else{
-//         //币本位
-//         if(diff === 7){
-//             data.netProfit = '0.39';
-//         }
-//         if(diff === 30){
-//             data.netProfit = '0.49';
-//         }
-//     }
-//
-//     $done({ body: JSON.stringify(body) })
-// }else {
-//     $done({})
-// }
