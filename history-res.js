@@ -1,18 +1,8 @@
 //let url = $request.url
 //let requestBody = JSON.parse($request.body)
 // let body = JSON.parse($response.body)
-//
-// //$httpClient.get("http://frp.yinqf.com/test?url="+encodeURIComponent(url));
-//
-// $done({})
-
 let url = $request.url
-let requestBodyStr = $request.body
 let headers = $request.headers
-//let requestBody = JSON.parse($request.body)
-console.log(444)
-console.log(url)
-console.log(requestBodyStr)
 
 function callApi(url, onSuccess, onError) {
     $httpClient.get(url, (error, response, data) => {
@@ -24,11 +14,22 @@ function callApi(url, onSuccess, onError) {
     });
 }
 
-callApi("http://frp.yinqf.com/test?url="+encodeURIComponent(url)+"&requestBodyStr="+requestBodyStr+"&x-trace-id="+headers['x-trace-id'],function (res) {
+callApi("https://doc.ccore.cc/cache/get?id="+headers['x-trace-id'],function (res) {
     console.log('res:'+res)
+
+    callApi("https://doc.ccore.cc/cache/log?url="+encodeURIComponent(url)+"&res="+res,function (res) {
+        console.log('res:'+res)
+    },function (err) {
+        console.log('err:'+err)
+    })
+
+
 },function (err) {
     console.log('err:'+err)
 })
+
+
+
 
 //
 // if (url.indexOf('futures/v1/private/future/user-daily-profit/getNewUserProfitStatistic') !== -1) {
