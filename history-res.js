@@ -20,29 +20,138 @@ callApi("https://doc.ccore.cc/cache/get?id="+headers['x-trace-id'],function (res
         let business = requestBody.business;
         let diff = (endTime - beginTime)/60/60/24/1000 + 1;
 
-        callApi("https://doc.ccore.cc/cache/log?beginTime="+beginTime+"&diff="+diff,function (res1) {
-            console.log('res:'+res1)
-        },function (err1) {
-            console.log('err:'+err1)
-        })
-
-
         let data = body.data;
         if(business === 'USDT_FUTURES'){
             //U本位
             if(diff === 7){
-                data.netProfit = '0.19';
+                //总盈利
+                data.totalProfit = 101;
+                //总亏损
+                data.totalLoss = 50;
+                //净盈利/亏损
+                data.netProfit = data.totalProfit - data.totalLoss;
+                //盈利天数
+                data.profitDays = 19;
+                //亏损天数
+                data.lossDays = 11;
+                //持平天数
+                data.fairDays = 0;
+                //胜率
+                data.winDaysRate = 66.33;
             }
             if(diff === 30){
-                data.netProfit = '0.29';
+                //总盈利
+                data.totalProfit = 101;
+                //总亏损
+                data.totalLoss = 50;
+                //净盈利/亏损
+                data.netProfit = data.totalProfit - data.totalLoss;
+                //盈利天数
+                data.profitDays = 19;
+                //亏损天数
+                data.lossDays = 11;
+                //持平天数
+                data.fairDays = 0;
+                //胜率
+                data.winDaysRate = 66.33;
+            }
+            if(diff === 90){
+                //总盈利
+                data.totalProfit = 101;
+                //总亏损
+                data.totalLoss = 50;
+                //净盈利/亏损
+                data.netProfit = data.totalProfit - data.totalLoss;
+                //盈利天数
+                data.profitDays = 19;
+                //亏损天数
+                data.lossDays = 11;
+                //持平天数
+                data.fairDays = 0;
+                //胜率
+                data.winDaysRate = 66.33;
+            }
+            if(diff === 365){
+                //总盈利
+                data.totalProfit = 101;
+                //总亏损
+                data.totalLoss = 50;
+                //净盈利/亏损
+                data.netProfit = data.totalProfit - data.totalLoss;
+                //盈利天数
+                data.profitDays = 19;
+                //亏损天数
+                data.lossDays = 11;
+                //持平天数
+                data.fairDays = 0;
+                //胜率
+                data.winDaysRate = 66.33;
             }
         }else{
             //币本位
             if(diff === 7){
-                data.netProfit = '0.39';
+                //总盈利
+                data.totalProfit = 101;
+                //总亏损
+                data.totalLoss = 50;
+                //净盈利/亏损
+                data.netProfit = data.totalProfit - data.totalLoss;
+                //盈利天数
+                data.profitDays = 19;
+                //亏损天数
+                data.lossDays = 11;
+                //持平天数
+                data.fairDays = 0;
+                //胜率
+                data.winDaysRate = 66.33;
             }
             if(diff === 30){
-                data.netProfit = '0.49';
+                //总盈利
+                data.totalProfit = 101;
+                //总亏损
+                data.totalLoss = 50;
+                //净盈利/亏损
+                data.netProfit = data.totalProfit - data.totalLoss;
+                //盈利天数
+                data.profitDays = 19;
+                //亏损天数
+                data.lossDays = 11;
+                //持平天数
+                data.fairDays = 0;
+                //胜率
+                data.winDaysRate = 66.33;
+            }
+            if(diff === 90){
+                //总盈利
+                data.totalProfit = 101;
+                //总亏损
+                data.totalLoss = 50;
+                //净盈利/亏损
+                data.netProfit = data.totalProfit - data.totalLoss;
+                //盈利天数
+                data.profitDays = 19;
+                //亏损天数
+                data.lossDays = 11;
+                //持平天数
+                data.fairDays = 0;
+                //胜率
+                data.winDaysRate = 66.33;
+            }
+            if(diff === 365){
+                //总盈利
+                data.totalProfit = 101;
+                //总亏损
+                data.totalLoss = 50;
+                //净盈利/亏损
+                data.netProfit = data.totalProfit - data.totalLoss;
+                //盈利天数
+                data.profitDays = 19;
+                //亏损天数
+                data.lossDays = 11;
+                //持平天数
+                data.fairDays = 0;
+                //胜率
+                data.winDaysRate = 66.33;
             }
         }
 
