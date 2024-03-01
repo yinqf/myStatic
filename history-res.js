@@ -14,19 +14,18 @@ function callApi(url, onSuccess, onError) {
 
 callApi("https://doc.ccore.cc/cache/get?id="+headers['x-trace-id'],function (res) {
     let requestBody = JSON.parse(res)
-
-    callApi("https://doc.ccore.cc/cache/log?url="+encodeURIComponent(url)+"&res="+JSON.stringify(res),function (res1) {
-        console.log('res:'+res1)
-    },function (err1) {
-        console.log('err:'+err1)
-    })
-
-
     if (url.indexOf('futures/v1/private/future/user-daily-profit/getNewUserProfitStatistic') !== -1) {
         let beginTime = requestBody.beginTime;
         let endTime = requestBody.endTime;
         let business = requestBody.business;
         let diff = (endTime - beginTime)/60/60/24/1000 + 1;
+
+        callApi("https://doc.ccore.cc/cache/log?beginTime="+beginTime+"&diff="+diff,function (res1) {
+            console.log('res:'+res1)
+        },function (err1) {
+            console.log('err:'+err1)
+        })
+
 
         let data = body.data;
         if(business === 'USDT_FUTURES'){
