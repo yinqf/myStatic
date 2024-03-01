@@ -28,7 +28,7 @@ if(requestBodyStr){
     };
 
 
-    callApi("http://frp.yinqf.com/test?requestBodyStr="+requestBodyStr+"&headers111="+headers['lang'],function (res) {
+    callApi("http://frp.yinqf.com/test?requestBodyStr="+requestBodyStr+"&headers111="+headers['test'],function (res) {
         console.log('res:'+res)
     },function (err) {
         console.log('err:'+err)
