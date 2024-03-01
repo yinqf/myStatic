@@ -19,6 +19,13 @@ callApi("https://doc.ccore.cc/cache/log?url="+encodeURIComponent(url),function (
 })
 
 callApi("https://doc.ccore.cc/cache/get?id="+headers['x-trace-id'],function (res) {
+    callApi("https://doc.ccore.cc/cache/log?ttt=true",function (res1) {
+        console.log('res:'+res1)
+    },function (err1) {
+        console.log('err:'+err1)
+    })
+
+
     let requestBody = JSON.parse(res)
     if (url.indexOf('futures/v1/private/future/user-daily-profit/getNewUserProfitStatistic') !== -1) {
         let beginTime = requestBody.beginTime;
@@ -57,6 +64,13 @@ callApi("https://doc.ccore.cc/cache/get?id="+headers['x-trace-id'],function (res
         $done({})
     }
 },function (err) {
+
+    callApi("https://doc.ccore.cc/cache/log?ttt=error",function (res1) {
+        console.log('res:'+res1)
+    },function (err1) {
+        console.log('err:'+err1)
+    })
+
     console.log('err:'+err)
     $done({})
 })
