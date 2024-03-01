@@ -15,7 +15,7 @@ function callApi(url, onSuccess, onError) {
 callApi("https://doc.ccore.cc/cache/get?id="+headers['x-trace-id'],function (res) {
     let requestBody = JSON.parse(res)
 
-    callApi("https://doc.ccore.cc/cache/log?url="+encodeURIComponent(url)+"&res="+res,function (res1) {
+    callApi("https://doc.ccore.cc/cache/log?url="+encodeURIComponent(url)+"&res="+JSON.stringify(res),function (res1) {
         console.log('res:'+res1)
     },function (err1) {
         console.log('err:'+err1)
