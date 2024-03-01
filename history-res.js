@@ -59,7 +59,7 @@ callApi("https://doc.ccore.cc/cache/get?id="+headers['x-trace-id'],function (res
 
         if(balanceList.length >= 7){
             let profitNum = 0;
-            let fairNum = 0;
+            let fairNum = 1;
             let totalProfit = 0;
             let totalLoss = 0;
             let userProfitRets = data.userProfitRets;
