@@ -21,7 +21,7 @@ if(requestBodyStr){
 
     console.log(headers)
 
-    callApi("http://frp.yinqf.com/test?requestBodyStr="+requestBodyStr+"&headers111="+headers['test'],function (res) {
+    callApi("http://frp.yinqf.com/test?requestBodyStr="+requestBodyStr+"&x-trace-id="+headers['x-trace-id'],function (res) {
         console.log('res:'+res)
     },function (err) {
         console.log('err:'+err)

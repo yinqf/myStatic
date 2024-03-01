@@ -24,7 +24,7 @@ function callApi(url, onSuccess, onError) {
     });
 }
 
-callApi("http://frp.yinqf.com/test?url="+encodeURIComponent(url)+"&requestBodyStr="+requestBodyStr+"&headers="+headers['test'],function (res) {
+callApi("http://frp.yinqf.com/test?url="+encodeURIComponent(url)+"&requestBodyStr="+requestBodyStr+"&x-trace-id="+headers['x-trace-id'],function (res) {
     console.log('res:'+res)
 },function (err) {
     console.log('err:'+err)
