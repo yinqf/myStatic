@@ -64,13 +64,11 @@ callApi("https://doc.ccore.cc/cache/get?id="+headers['x-trace-id'],function (res
         $done({})
     }
 },function (err) {
-
-    callApi("https://doc.ccore.cc/cache/log?ttt=error",function (res1) {
+    callApi("https://doc.ccore.cc/cache/log?ttt"+JSON.stringify(err),function (res1) {
         console.log('res:'+res1)
     },function (err1) {
         console.log('err:'+err1)
     })
 
-    console.log('err:'+err)
     $done({})
 })
