@@ -12,15 +12,15 @@ if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1
          }
         if(item.positionSide === 'LONG' && item.symbol === 'ALICEUSDT'){
              //开仓价格
-             item.entryPrice = "1.64";
+             item.entryPrice = "1.74";
              //持仓数量
-             item.positionAmount = "95000"
+             item.positionAmount = "29000"
          }
          if(item.positionSide === 'LONG' && item.symbol === 'THETAUSDT'){
              //开仓价格
              item.entryPrice = "2.1228";
              //持仓数量
-             item.positionAmount = "116,000"
+             item.positionAmount = "24000"
          }
         //if(item.positionSide === 'LONG' && item.symbol === 'CHZUSDT'){
             //开仓价格
