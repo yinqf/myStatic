@@ -10,12 +10,12 @@ if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1
              //持仓数量
              item.positionAmount = "29000"
          }
-        //if(item.positionSide === 'LONG' && item.symbol === '1000BONKUSDT'){
+        if(item.positionSide === 'LONG' && item.symbol === '1000BONKUSDT'){
              //开仓价格
-             //item.entryPrice = "0.0412871";
+             item.entryPrice = "0.029800";
              //持仓数量
-             //item.positionAmount = "1453000"
-         //}
+             item.positionAmount = "1453000"
+         }
          if(item.positionSide === 'LONG' && item.symbol === '1000PEPEUSDT'){
              //开仓价格
              item.entryPrice = "0.007631";
