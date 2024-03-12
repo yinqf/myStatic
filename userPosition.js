@@ -4,11 +4,11 @@ let body = JSON.parse($response.body)
 if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1) {
     let dataList = body.data;
     dataList.forEach((item)=>{
-        if(item.positionSide === 'LONG' && item.symbol === 'ALICEUSDT'){
+        if(item.positionSide === 'LONG' && item.symbol === 'PHBUSDT'){
              //开仓价格
-             item.entryPrice = "1.74";
+             item.entryPrice = "3.0242";
              //持仓数量
-             item.positionAmount = "29000"
+             item.positionAmount = "18000"
          }
         if(item.positionSide === 'LONG' && item.symbol === '1000BONKUSDT'){
              //开仓价格
