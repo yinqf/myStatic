@@ -56,50 +56,6 @@ callApi("https://doc.ccore.cc/cache/get?id="+headers['x-trace-id'],function (res
                 data.profitDays = today_profit > 0 ? 1 : 0;
                 data.lossDays = today_profit > 0 ? 0 : 1;
             }
-            if (profitList.length >= 7) {
-                let profitNum = 0;
-                let fairNum = 1;
-                let totalProfit = 0;
-                let totalLoss = 0;
-                let userProfitRets = data.userProfitRets;
-                profitList.forEach((item, index) => {
-                    //余额，用于计算累计盈亏和累计盈亏率，例如7天累计盈亏 = 当天余额 - 7天前的余额
-                    userProfitRets[index].profit = item;
-                    if (index > 0) {
-                        //当日余额等于上日余额 + 当日盈利
-                        userProfitRets[index].balance = userProfitRets[index-1].balance + item
-                        if (item > 0) {
-                            //记录盈利天数
-                            profitNum = profitNum + 1;
-                            //记录累计盈利金额
-                            totalProfit = totalProfit + item;
-                        } else if (item === 0) {
-                            //记录持平天数
-                            fairNum = fairNum + 1;
-                        } else {
-                            //记录累计亏损金额
-                            totalLoss = totalLoss + item;
-                        }
-                    }
-                    //净划入
-                    item.transferIn = 0;
-                });
-
-                //盈利天数
-                data.profitDays = profitNum;
-                //亏损天数
-                data.lossDays = profitList.length - profitNum - fairNum;
-                //持平天数
-                data.fairDays = fairNum;
-                //胜率
-                data.winDaysRate = (profitNum * 100 / profitList.length).toFixed(2);
-                //总盈利
-                data.totalProfit = totalProfit;
-                //总亏损
-                data.totalLoss = totalLoss * -1;
-                //净盈利/亏损
-                data.netProfit = data.totalProfit - data.totalLoss;
-            }
 
             $done({body: JSON.stringify(body)})
         } else {
