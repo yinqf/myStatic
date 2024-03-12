@@ -2,6 +2,8 @@ let url = $request.url
 let body = JSON.parse($response.body)
 let headers = $request.headers
 
+let u_balance_list_1 = [1000];
+
 //最近7天的u本位合约余额数据，正序排列，时间小的在前面
 let u_balance_list_7 = [
 230369.77,
@@ -537,6 +539,9 @@ callApi("https://doc.ccore.cc/cache/get?id="+headers['x-trace-id'],function (res
             let balanceList = [];
             if (business === 'USDT_FUTURES') {
                 if (diff === 7) {
+                    balanceList = u_balance_list_1;
+                }
+                if (diff === 7) {
                     balanceList = u_balance_list_7;
                 }
                 if (diff === 30) {
@@ -550,7 +555,7 @@ callApi("https://doc.ccore.cc/cache/get?id="+headers['x-trace-id'],function (res
                 }
             }
 
-            if (balanceList.length >= 7) {
+            if (balanceList.length >= 1) {
                 let profitNum = 0;
                 let fairNum = 1;
                 let totalProfit = 0;
