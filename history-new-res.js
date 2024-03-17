@@ -2,7 +2,7 @@ let url = $request.url
 let body = JSON.parse($response.body)
 let headers = $request.headers
 
-let curr_balance = 0;
+let curr_balance = 720937.12;
 let today_profit = -50.19;
 let profit_list_7 = 
     [
