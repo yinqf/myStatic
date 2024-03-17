@@ -194,11 +194,11 @@ callApi("https://doc.ccore.cc/cache/get?id="+headers['x-trace-id'],function (res
             if (business === 'USDT_FUTURES') {
                 if (data.userProfitRets.length === 1) {
                     // 总盈利
-                    data.totalProfit = 500
+                    data.totalProfit = -50
                     // 总亏损
                     data.totalLoss = 0
                     // 净盈利/亏损
-                    data.netProfit = 500
+                    data.netProfit = -50
                     // 盈利天数
                     data.profitDays = 1
                     // 亏损天数
@@ -216,9 +216,9 @@ callApi("https://doc.ccore.cc/cache/get?id="+headers['x-trace-id'],function (res
                         {
                             "userId": 526310661,
                             "day": 1710547200000,
-                            "balance": 1600,
+                            "balance": 300598.14,
                             "netInflow": 0.00000000,
-                            "profit": 500,
+                            "profit": -50,
                             "debt": null,
                             "transferIn": 0.00000000
                         }
