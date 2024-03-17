@@ -44,11 +44,11 @@ if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
   dataList.forEach((item)=>{
     if(item.accountType === 'FUTURE'){
       //账户总览界面，合约余额，btc数量
-      item.balance = btcNum.toFixed(8);
+      item.balance = btcNum === 0 ? 0 : btcNum.toFixed(8);
     }
     if(item.accountType === 'MAIN'){
       //账户总览界面，现货余额，btc数量
-      item.balance = spotBtcNum.toFixed(8);
+      item.balance = spotBtcNum === 0 ? 0 : spotBtcNum.toFixed(8);
     }
   })
   $done({ body: JSON.stringify(body) })
