@@ -6,11 +6,11 @@ let balance = '739853.67';
 //现货USDT数量
 let uBalance = '1851908.256896';
 //现货BTC数量
-let btcBalance = '21';
+let btcBalance = '0.00015';
 //现货ETH数量
-let ethBalance = '400';
+let ethBalance = '0.0028';
 //现货BNB数量
-let bnbBalance = '2000.2743553';
+let bnbBalance = '0.2743553';
 //btc价格
 let btcPrice = '67856.14';
 //eth价格
