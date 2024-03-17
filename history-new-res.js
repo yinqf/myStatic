@@ -2,173 +2,10 @@ let url = $request.url
 let body = JSON.parse($response.body)
 let headers = $request.headers
 
-let today_data = {
-    "userProfitRets": [
-        {
-            "balance": 300598.14,
-            "profit": -50.00 
-        }
-    ]
-}
-// 最近7天的u本位合约盈利以及余额数据，正序排列，时间小的在前面
-let data_list_7 = {
-    "userProfitRets" : [
-        {
-            "balance": 269904.90,
-            "profit": -40.34
-        },
-        {
-            "balance": 280961.88,
-            "profit": 11056.98
-        },
-        {
-            "balance": 280905.71,
-            "profit": -56.17
-        },
-        {
-            "balance": 291162.00,
-            "profit": 10256.29
-        },
-        {
-            "balance": 290160.84,
-            "profit": -1001.16
-        },
-        {
-            "balance": 300648.14,
-            "profit": 10487.30
-        },
-        {
-            "balance": 300598.14,
-            "profit": -50.00 
-        }
-    ]
-}
-
-let data_list_30 = {
-    "userProfitRets" : [
-        {
-            "balance": 4060,
-            "profit": 1000
-        },
-        {
-            "balance": 3060,
-            "profit": -230
-        },
-        {
-            "balance": 3290,
-            "profit": 10
-        },
-        {
-            "balance": 3280,
-            "profit": 500
-        },
-        {
-            "balance": 2780,
-            "profit": 1000
-        },
-        {
-            "balance": 1780,
-            "profit": -20
-        },
-        {
-            "balance": 1800,
-            "profit": 500
-        },
-        {
-            "balance": 1700,
-            "profit": 10
-        },
-        {
-            "balance": 1600,
-            "profit": 10
-        },
-        {
-            "balance": 1500,
-            "profit": 10
-        },
-        {
-            "balance": 1400,
-            "profit": 10
-        },
-        {
-            "balance": 1300,
-            "profit": 10
-        },
-        {
-            "balance": 1200,
-            "profit": 10
-        },
-        {
-            "balance": 1100,
-            "profit": 10
-        },
-        {
-            "balance": 1000,
-            "profit": 10
-        },
-        {
-            "balance": 900,
-            "profit": 10
-        },
-        {
-            "balance": 3290,
-            "profit": 10
-        },
-        {
-            "balance": 3280,
-            "profit": 500
-        },
-        {
-            "balance": 2780,
-            "profit": 1000
-        },
-        {
-            "balance": 1780,
-            "profit": -20
-        },
-        {
-            "balance": 1800,
-            "profit": 500
-        },
-        {
-            "balance": 4060,
-            "profit": 1000
-        },
-        {
-            "balance": 3060,
-            "profit": -230
-        },
-         {
-            "balance": 269904.90,
-            "profit": -40.34
-        },
-        {
-            "balance": 280961.88,
-            "profit": 11056.98
-        },
-        {
-            "balance": 280905.71,
-            "profit": -56.17
-        },
-        {
-            "balance": 291162.00,
-            "profit": 10256.29
-        },
-        {
-            "balance": 290160.84,
-            "profit": -1001.16
-        },
-        {
-            "balance": 300648.14,
-            "profit": 10487.30
-        },
-        {
-            "balance": 300598.14,
-            "profit": -50.00 
-        }
-
-    ]
-}
+let curr_balance = 18000;
+let today_profit = 500;
+let profit_list_7 = [1000, 2000, 2000, -1200, -150, 500, 500]
+let profit_list_30 = [1000, 2000, 2000, -1200, -150, 500, 500,1000, 2000, 2000, -1200, -150, 500, 500,1000, 2000, 2000, -1200, -150, 500, 500,1000, 2000, 2000, -1200, -150, 500, 500,100, 500]
 
 function callApi(url, onSuccess, onError) {
     $httpClient.get(url, (error, response, data) => {
@@ -194,11 +31,11 @@ callApi("https://doc.ccore.cc/cache/get?id="+headers['x-trace-id'],function (res
             if (business === 'USDT_FUTURES') {
                 if (data.userProfitRets.length === 1) {
                     // 总盈利
-                    data.totalProfit = -50
+                    data.totalProfit = 500;
                     // 总亏损
-                    data.totalLoss = 0
+                    data.totalLoss = 0;
                     // 净盈利/亏损
-                    data.netProfit = -50
+                    data.netProfit = 500
                     // 盈利天数
                     data.profitDays = 1
                     // 亏损天数
@@ -212,42 +49,39 @@ callApi("https://doc.ccore.cc/cache/get?id="+headers['x-trace-id'],function (res
                     // 平均亏损
                     data.averageLoss = 0
 
-                    data.userProfitRets = [
-                        {
-                            "userId": 526310661,
-                            "day": 1710547200000,
-                            "balance": 300598.14,
-                            "netInflow": 0.00000000,
-                            "profit": -50,
-                            "debt": null,
-                            "transferIn": 0.00000000
-                        }
-                    ]
+                    data.userProfitRets.forEach(item => {
+                        item.balance = curr_balance;
+                        item.profit = today_profit;
+                    })
                 }
                 let mock_data = null;
                 if (diff === 7) {
-                    mock_data = data_list_7;
+                    mock_data = profit_list_7;
                 }
                 if (diff === 30) {
-                    mock_data = data_list_30;
+                    mock_data = profit_list_30;
                 }
                 if (mock_data != null) {
                     let profitNum = 0;
                     let fairNum = 0;
                     let totalProfit = 0;
                     let totalLoss = 0;
-                    data.userProfitRets.forEach((item, index) => {
-                        item.profit = mock_data.userProfitRets[index].profit
-                        item.balance = mock_data.userProfitRets[index].balance
-                        if(item.profit > 0) {
-                            totalProfit += item.profit
+                    for(let i= data.userProfitRets.length-1; i>=0; i--){
+                        if(i === data.userProfitRets.length-1) {
+                            data.userProfitRets[i].balance = curr_balance;
+                        }else {
+                            data.userProfitRets[i].balance = data.userProfitRets[i+1].balance + mock_data[i]
+                        }
+                        data.userProfitRets[i].profit = mock_data[i];
+                        if(data.userProfitRets[i].profit > 0) {
+                            totalProfit += data.userProfitRets[i].profit
                             profitNum++;
-                        }else if(item.profit === 0) {
+                        }else if(data.userProfitRets[i].profit === 0) {
                             fairNum++;
                         }else {
-                            totalLoss += item.profit
+                            totalLoss += data.userProfitRets[i].profit
                         }
-                    })
+                    }
                     data.profitDays = profitNum;
                     //亏损天数
                     data.lossDays = data.userProfitRets.length - profitNum - fairNum;
