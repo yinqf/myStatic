@@ -138,33 +138,33 @@ let data_list_30 = {
             "balance": 3060,
             "profit": -230
         },
-        {
-            "balance": 3290,
-            "profit": 10
+         {
+            "balance": 269904.90,
+            "profit": -40.34
         },
         {
-            "balance": 3280,
-            "profit": 500
+            "balance": 280961.88,
+            "profit": 11056.98
         },
         {
-            "balance": 2780,
-            "profit": 1000
+            "balance": 280905.71,
+            "profit": -56.17
         },
         {
-            "balance": 1780,
-            "profit": -20
+            "balance": 291162.00,
+            "profit": 10256.29
         },
         {
-            "balance": 1800,
-            "profit": 500
+            "balance": 290160.84,
+            "profit": -1001.16
         },
         {
-            "balance": 4060,
-            "profit": 1000
+            "balance": 300648.14,
+            "profit": 10487.30
         },
         {
-            "balance": 1800,
-            "profit": 500
+            "balance": 300598.14,
+            "profit": -50.00 
         }
 
     ]
