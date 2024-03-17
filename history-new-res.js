@@ -2,10 +2,51 @@ let url = $request.url
 let body = JSON.parse($response.body)
 let headers = $request.headers
 
-let curr_balance = 18000;
-let today_profit = 500;
-let profit_list_7 = [1000, 2000, 2000, -1200, -150, 500, 500]
-let profit_list_30 = [1000, 2000, 2000, -1200, -150, 500, 500,1000, 2000, 2000, -1200, -150, 500, 500,1000, 2000, 2000, -1200, -150, 500, 500,1000, 2000, 2000, -1200, -150, 500, 500,100, 500]
+let curr_balance = 280703.78;
+let today_profit = -50.18;
+let profit_list_7 = 
+    [
+    -40.34,
+11056.98,
+-56.17,
+10256.29,
+-20895.34,
+10487.30,
+-50.18
+]
+let profit_list_30 = 
+    [
+    -68.99,
+10965.41,
+9980.01,
+-22659.53,
+-59.11,
+11256.77,
+-11560.44,
+-71.20,
+-69.73,
+20896.67,
+10424.17,
+-10403.24,
+-81.07,
+9982.55,
+-72.28,
+-90.05,
+-88.98,
+-19986.33,
+10256.29,
+-1001.16,
+10487.30,
+9926.37,
+9906.67,
+-40.34,
+11056.98,
+-56.17,
+10256.29,
+-20895.34,
+10487.30,
+-50.18
+]
 
 function callApi(url, onSuccess, onError) {
     $httpClient.get(url, (error, response, data) => {
@@ -31,11 +72,11 @@ callApi("https://doc.ccore.cc/cache/get?id="+headers['x-trace-id'],function (res
             if (business === 'USDT_FUTURES') {
                 if (data.userProfitRets.length === 1) {
                     // 总盈利
-                    data.totalProfit = 500;
+                    data.totalProfit = 0;
                     // 总亏损
-                    data.totalLoss = 0;
+                    data.totalLoss = 50.18;
                     // 净盈利/亏损
-                    data.netProfit = 500
+                    data.netProfit = -50.18
                     // 盈利天数
                     data.profitDays = 1
                     // 亏损天数
