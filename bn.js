@@ -4,19 +4,19 @@ let body = JSON.parse($response.body)
 //合约USDT余额
 let balance = '720937.12';
 //现货USDT数量
-let uBalance = '452300.256896';
+let uBalance = '1851908.256896';
 //现货BTC数量
-let btcBalance = '13.52162012';
+let btcBalance = '0.00';
 //现货ETH数量
-let ethBalance = '100.5843';
+let ethBalance = '0.00';
 //现货BNB数量
-let bnbBalance = '300.125481';
+let bnbBalance = '0.2743553';
 //btc价格
-let btcPrice = '67497';
+let btcPrice = '0';
 //eth价格
-let ethPrice = '3806.6';
+let ethPrice = '0';
 //bnb价格
-let bnbPrice = '408.9';
+let bnbPrice = '561.8';
 //合约btc数量
 let btcNum = Number(balance)/Number(btcPrice);
 //现货btc数量
