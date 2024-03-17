@@ -6,7 +6,7 @@ let balance = '739853.67';
 //现货USDT数量
 let uBalance = '1851908.256896';
 //现货BTC数量
-let btcBalance = '1.00';
+let btcBalance = '1.001';
 //现货ETH数量
 let ethBalance = '0.00';
 //现货BNB数量
