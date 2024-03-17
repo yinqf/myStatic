@@ -7,46 +7,46 @@ let today_profit = -50.19;
 let profit_list_7 = 
     [
     -40.34,
-11056.98,
--56.17,
-10256.29,
--20895.34,
-10487.30,
--50.19
-]
+    11056.98,
+    -56.17,
+    10256.29,
+    -20895.34,
+    10487.30,
+    -50.19
+    ]
 let profit_list_30 = 
     [
     -68.99,
-10965.41,
-9980.01,
--22659.53,
--59.11,
-11256.77,
--11560.44,
--71.20,
--69.73,
-20896.67,
-10424.17,
--10403.24,
--81.07,
-9982.55,
--72.28,
--90.05,
--88.98,
--19986.33,
-10256.29,
--1001.16,
-10487.30,
-9926.37,
-9906.67,
--40.34,
-11056.98,
--56.17,
-10256.29,
--20895.34,
-10487.30,
--50.19
-]
+    10965.41,
+    9980.01,
+    -22659.53,
+    -59.11,
+    11256.77,
+    -11560.44,
+    -71.20,
+    -69.73,
+    20896.67,
+    10424.17,
+    -10403.24,
+    -81.07,
+    9982.55,
+    -72.28,
+    -90.05,
+    -88.98,
+    -19986.33,
+    10256.29,
+    -1001.16,
+    10487.30,
+    9926.37,
+    9906.67,
+    -40.34,
+    11056.98,
+    -56.17,
+    10256.29,
+    -20895.34,
+    10487.30,
+    -50.19
+    ]
 
 function callApi(url, onSuccess, onError) {
     $httpClient.get(url, (error, response, data) => {
@@ -72,23 +72,23 @@ callApi("https://doc.ccore.cc/cache/get?id="+headers['x-trace-id'],function (res
             if (business === 'USDT_FUTURES') {
                 if (data.userProfitRets.length === 1) {
                     // 总盈利
-                    data.totalProfit = 0;
+                    data.totalProfit = today_profit > 0 ? today_profit : 0;
                     // 总亏损
-                    data.totalLoss = 0;
+                    data.totalLoss = today_profit > 0 ? 0 : today_profit;
                     // 净盈利/亏损
-                    data.netProfit = 0
+                    data.netProfit = today_profit;
                     // 盈利天数
-                    data.profitDays = 1
+                    data.profitDays = today_profit > 0 ? 1 : 0;
                     // 亏损天数
-                    data.lossDays = 0
+                    data.lossDays = today_profit > 0 ? 0 : 1;
                     // 未产生盈利亏损天数
-                    data.fairDays = 0
+                    data.fairDays = today_profit === 0 ? 1 : 0;
                     // 盈利天数占比
-                    data.winDaysRate = 1.0
+                    data.winDaysRate = today_profit > 0 ? 1.0 : 0;
                     // 平均盈利
-                    data.averageProfit = 10
+                    data.averageProfit = today_profit > 0 ? today_profit : 0;
                     // 平均亏损
-                    data.averageLoss = 0
+                    data.averageLoss = today_profit > 0 ? 0 : today_profit;
 
                     data.userProfitRets.forEach(item => {
                         item.balance = curr_balance;
