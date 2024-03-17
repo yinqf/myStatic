@@ -74,9 +74,9 @@ callApi("https://doc.ccore.cc/cache/get?id="+headers['x-trace-id'],function (res
                     // 总盈利
                     data.totalProfit = 0;
                     // 总亏损
-                    data.totalLoss = 50.18;
+                    data.totalLoss = 0;
                     // 净盈利/亏损
-                    data.netProfit = -50.18
+                    data.netProfit = 0
                     // 盈利天数
                     data.profitDays = 1
                     // 亏损天数
