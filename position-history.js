@@ -13,7 +13,7 @@ if (url.indexOf('bapi/composite/v1/private/bigdata/finance/futures/query-positio
     }
 
     $done({ body: JSON.stringify(body) })
-}else if (url.indexOf('bapi/futures/v1/private/future/user-data/trade-history') !== -1) {
+}else if (url.indexOf('futures/v1/private/future/user-data/trade-history') !== -1) {
     let data = body.data;
     if (data != null) {
         data.forEach(item => {
@@ -23,7 +23,7 @@ if (url.indexOf('bapi/composite/v1/private/bigdata/finance/futures/query-positio
         })
     }
     $done({ body: JSON.stringify(body) })
-}else if (url.indexOf('bapi/futures/v1/private/future/user-data/transaction-history') !== -1) {
+}else if (url.indexOf('futures/v1/private/future/user-data/transaction-history') !== -1) {
     let data = body.data;
     if (data != null) {
         data.forEach(item => {
@@ -32,7 +32,7 @@ if (url.indexOf('bapi/composite/v1/private/bigdata/finance/futures/query-positio
         })
     }
     $done({ body: JSON.stringify(body) })
-}else if (url.indexOf('bapi/futures/v1/private/future/order/order-history') !== -1) {
+}else if (url.indexOf('futures/v1/private/future/order/order-history') !== -1) {
     let data = body.data;
     if (data != null) {
         data.forEach(item => {
