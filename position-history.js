@@ -5,9 +5,9 @@ if (url.indexOf('bapi/composite/v1/private/bigdata/finance/futures/query-positio
     let data = body.data;
     if (data.positionHistoryItemList != null) {
         data.positionHistoryItemList.forEach(item => {
-            item.closed_volume = item.closed_volume * 10;
-            item.closing_pnl = item.closing_pnl * 10;
-            item.max_open_interest = item.max_open_interest * 10;
+            item.closed_volume = item.closed_volume * 500;
+            item.closing_pnl = item.closing_pnl * 500;
+            item.max_open_interest = item.max_open_interest * 500;
         })
     }
 
