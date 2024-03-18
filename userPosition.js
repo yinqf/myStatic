@@ -6,9 +6,9 @@ if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1
     dataList.forEach((item)=>{
         if(item.positionSide === 'LONG' && item.symbol === 'WIFUSDT'){
              //开仓价格
-             item.entryPrice = "2.8855";
+             item.entryPrice = "3.0474";
              //持仓数量
-             item.positionAmount = "23500"
+             item.positionAmount = "20500"
          }
         if(item.positionSide === 'LONG' && item.symbol === 'FRONTUSDT'){
              //开仓价格
