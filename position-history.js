@@ -41,6 +41,14 @@ if (url.indexOf('bapi/composite/v1/private/bigdata/finance/futures/query-positio
         })
     }
     $done({ body: JSON.stringify(body) })
+}else if (url.indexOf('bapi/futures/v2/private/future/order/open-orders') !== -1){
+    let data = body.data;
+    if (data != null) {
+        data.forEach(item => {
+            item.origQty = item.origQty * multiple;
+        })
+    }
+    $done({ body: JSON.stringify(body) })
 }else{
     $done({})
 }
