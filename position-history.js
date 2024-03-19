@@ -36,7 +36,7 @@ if (url.indexOf('bapi/composite/v1/private/bigdata/finance/futures/query-positio
     let data = body.data;
     if (data != null) {
         data.forEach(item => {
-            item.delegateMoney = item.delegateMoney * multiple;
+            item.executedQuoteQty = item.executedQuoteQty * multiple;
         })
     }
     $done({ body: JSON.stringify(body) })
