@@ -38,6 +38,7 @@ if (url.indexOf('bapi/composite/v1/private/bigdata/finance/futures/query-positio
     if (data != null) {
         data.forEach(item => {
             item.executedQuoteQty = item.executedQuoteQty * multiple;
+            item.origQty = item.origQty * multiple;
         })
     }
     $done({ body: JSON.stringify(body) })
