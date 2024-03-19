@@ -20,6 +20,7 @@ if (url.indexOf('bapi/composite/v1/private/bigdata/finance/futures/query-positio
             item.fee = item.fee * multiple;
             item.qty = item.qty * multiple;
             item.totalQuota = item.totalQuota * multiple;
+            item.realizedProfit = item.realizedProfit * multiple;
         })
     }
     $done({ body: JSON.stringify(body) })
