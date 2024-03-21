@@ -12,9 +12,9 @@ if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1
          }
          if(item.positionSide === 'LONG' && item.symbol === '1000PEPEUSDT'){
              //开仓价格
-             item.entryPrice = "0.007334";
+             item.entryPrice = "0.0083701";
              //持仓数量
-             item.positionAmount = "7117500"
+             item.positionAmount = "6012500"
          }
         if(item.positionSide === 'LONG' && item.symbol === 'BTCUSDT'){
             //开仓价格
