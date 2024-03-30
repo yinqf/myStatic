@@ -4,23 +4,23 @@ let body = JSON.parse($response.body)
 if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1) {
     let dataList = body.data;
     dataList.forEach((item)=>{
-        if(item.positionSide === 'LONG' && item.symbol === 'POLYXUSDT'){
+        if(item.positionSide === 'LONG' && item.symbol === 'ETHFIUSDT'){
              //开仓价格
-             item.entryPrice = "0.42571";
+             item.entryPrice = "7.125";
              //持仓数量
-             item.positionAmount = "117000"
+             item.positionAmount = "6650"
          }
-        if(item.positionSide === 'LONG' && item.symbol === 'WIFUSDT'){
+        if(item.positionSide === 'LONG' && item.symbol === 'RVNUSDT'){
              //开仓价格
-             item.entryPrice = "2.2677";
+             item.entryPrice = "0.04870";
              //持仓数量
-             item.positionAmount = "21300"
+             item.positionAmount = "1021500"
          }
-         if(item.positionSide === 'LONG' && item.symbol === '1000PEPEUSDT'){
+         if(item.positionSide === 'LONG' && item.symbol === 'SUIUSDT'){
              //开仓价格
-             item.entryPrice = "0.0083701";
+             item.entryPrice = "2.0645";
              //持仓数量
-             item.positionAmount = "6012500"
+             item.positionAmount = "23950"
          }
         if(item.positionSide === 'LONG' && item.symbol === 'BTCUSDT'){
             //开仓价格
