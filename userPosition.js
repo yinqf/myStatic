@@ -6,7 +6,7 @@ if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1
     dataList.forEach((item)=>{
         if(item.positionSide === 'LONG' && item.symbol === '1000PEPEUSDT'){
              //开仓价格
-             item.entryPrice = "0.0071283";
+             item.entryPrice = "0.0068294";
              //持仓数量
              item.positionAmount = "7024500"
          }
@@ -16,11 +16,11 @@ if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1
              //持仓数量
              item.positionAmount = "11000"
          }
-         if(item.positionSide === 'LONG' && item.symbol === 'SUIUSDT'){
+         if(item.positionSide === 'LONG' && item.symbol === 'LEVERUSDT'){
              //开仓价格
-             item.entryPrice = "1.9613";
+             item.entryPrice = "0.0035029";
              //持仓数量
-             item.positionAmount = "23950"
+             item.positionAmount = "14272500"
          }
         if(item.positionSide === 'LONG' && item.symbol === 'BTCUSDT'){
             //开仓价格
