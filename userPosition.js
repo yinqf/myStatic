@@ -10,6 +10,12 @@ if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1
              //持仓数量
              item.positionAmount = "7024500"
          }
+        if(item.positionSide === 'LONG' && item.symbol === 'ENAUSDT'){
+             //开仓价格
+             item.entryPrice = "1.143";
+             //持仓数量
+             item.positionAmount = "43500"
+         }
         if(item.positionSide === 'LONG' && item.symbol === 'JTOUSDT'){
              //开仓价格
              item.entryPrice = "4.4275";
