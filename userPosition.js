@@ -4,29 +4,29 @@ let body = JSON.parse($response.body)
 if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1) {
     let dataList = body.data;
     dataList.forEach((item)=>{
-        if(item.positionSide === 'LONG' && item.symbol === '1000PEPEUSDT'){
+        if(item.positionSide === 'LONG' && item.symbol === 'JASMYUSDT'){
              //开仓价格
-             item.entryPrice = "0.0068294";
+             item.entryPrice = "0.020413";
              //持仓数量
-             item.positionAmount = "7024500"
+             item.positionAmount = "2380500"
          }
-        if(item.positionSide === 'LONG' && item.symbol === 'ENAUSDT'){
+        if(item.positionSide === 'LONG' && item.symbol === 'TONUSDT'){
              //开仓价格
-             item.entryPrice = "1.143";
+             item.entryPrice = "6.65";
              //持仓数量
-             item.positionAmount = "43500"
+             item.positionAmount = "7500"
          }
-        if(item.positionSide === 'LONG' && item.symbol === 'JTOUSDT'){
+        if(item.positionSide === 'LONG' && item.symbol === 'WIFUSDT'){
              //开仓价格
-             item.entryPrice = "4.4275";
+             item.entryPrice = "3.1208";
              //持仓数量
-             item.positionAmount = "11000"
+             item.positionAmount = "16650"
          }
-         if(item.positionSide === 'LONG' && item.symbol === 'LEVERUSDT'){
+         if(item.positionSide === 'LONG' && item.symbol === 'PENDLEUSDT'){
              //开仓价格
-             item.entryPrice = "0.0035029";
+             item.entryPrice = "6.8551";
              //持仓数量
-             item.positionAmount = "14272500"
+             item.positionAmount = "7000"
          }
         if(item.positionSide === 'LONG' && item.symbol === 'BTCUSDT'){
             //开仓价格
