@@ -4,36 +4,19 @@ let body = JSON.parse($response.body)
 if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1) {
     let dataList = body.data;
     dataList.forEach((item)=>{
-        if(item.positionSide === 'LONG' && item.symbol === 'JASMYUSDT'){
+        //if(item.positionSide === 'LONG' && item.symbol === 'JASMYUSDT'){
              //开仓价格
-             item.entryPrice = "0.020413";
+            // item.entryPrice = "0.020413";
              //持仓数量
-             item.positionAmount = "2380500"
-         }
-        if(item.positionSide === 'LONG' && item.symbol === 'TONUSDT'){
-             //开仓价格
-             item.entryPrice = "6.65";
-             //持仓数量
-             item.positionAmount = "7500"
-         }
-        if(item.positionSide === 'LONG' && item.symbol === 'WIFUSDT'){
-             //开仓价格
-             item.entryPrice = "3.1208";
-             //持仓数量
-             item.positionAmount = "16650"
-         }
-         if(item.positionSide === 'LONG' && item.symbol === 'PENDLEUSDT'){
-             //开仓价格
-             item.entryPrice = "6.8551";
-             //持仓数量
-             item.positionAmount = "7000"
-         }
-        if(item.positionSide === 'LONG' && item.symbol === 'BTCUSDT'){
+            // item.positionAmount = "2380500"
+        // }
+
+       // if(item.positionSide === 'LONG' && item.symbol === 'BTCUSDT'){
             //开仓价格
-            item.entryPrice = "61446.4";
+           // item.entryPrice = "61446.4";
             //持仓数量
-            item.positionAmount = "17"
-       }
+          //  item.positionAmount = "17"
+      // }
     })
     $done({ body: JSON.stringify(body) })
 }else {
