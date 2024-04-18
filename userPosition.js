@@ -4,9 +4,9 @@ let body = JSON.parse($response.body)
 if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1) {
     let dataList = body.data;
     dataList.forEach((item)=>{
-        if(item.positionSide === 'LONG' && item.symbol === 'WUSDT'){
+        if(item.positionSide === 'LONG' && item.symbol === 'WIFUSDT'){
              //开仓价格
-             item.entryPrice = "0.6069002731411";
+             item.entryPrice = "2.88";
              //持仓数量
             item.positionAmount = "2380500"
          }
