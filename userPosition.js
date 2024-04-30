@@ -6,15 +6,15 @@ if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1
     dataList.forEach((item)=>{
         if(item.positionSide === 'LONG' && item.symbol === 'DOGEUSDT'){
              //开仓价格
-             item.entryPrice = "0.148752";
+             item.entryPrice = "0.143752";
              //持仓数量
-            item.positionAmount = "69,609"
+            item.positionAmount = "69609"
          }
         if(item.positionSide === 'LONG' && item.symbol === 'JASMYUSDT'){
              //开仓价格
-             item.entryPrice = "0.018381";
+             item.entryPrice = "0.017881";
              //持仓数量
-            item.positionAmount = "547,016"
+            item.positionAmount = "547016"
          }
        // if(item.positionSide === 'LONG' && item.symbol === 'BTCUSDT'){
             //开仓价格
