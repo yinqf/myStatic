@@ -4,13 +4,18 @@ let body = JSON.parse($response.body)
 if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1) {
     let dataList = body.data;
     dataList.forEach((item)=>{
-        if(item.positionSide === 'LONG' && item.symbol === 'WIFUSDT'){
+        if(item.positionSide === 'LONG' && item.symbol === 'DOGEUSDT'){
              //开仓价格
-             item.entryPrice = "2.88";
+             item.entryPrice = "0.148752";
              //持仓数量
-            item.positionAmount = "2380500"
+            item.positionAmount = "69,609"
          }
-
+        if(item.positionSide === 'LONG' && item.symbol === 'JASMYUSDT'){
+             //开仓价格
+             item.entryPrice = "0.018381";
+             //持仓数量
+            item.positionAmount = "547,016"
+         }
        // if(item.positionSide === 'LONG' && item.symbol === 'BTCUSDT'){
             //开仓价格
            // item.entryPrice = "61446.4";
