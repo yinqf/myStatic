@@ -2,7 +2,7 @@ let url = $request.url
 let body = JSON.parse($response.body)
 
 //合约USDT余额
-let balance = '939853.67';
+let balance = '132735.96';
 //现货USDT数量
 let uBalance = '10380.94';
 //现货BTC数量
