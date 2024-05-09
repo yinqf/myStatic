@@ -3,7 +3,7 @@ let body = JSON.parse($response.body)
 
 if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1) {
     let dataList = body.data;
-    let multiple = 5;
+    let multiple = 100;
     dataList.forEach((item)=>{
          if(item.positionAmount > 0) {
             item.positionAmount = item.positionAmount * multiple;
