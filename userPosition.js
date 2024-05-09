@@ -4,24 +4,30 @@ let body = JSON.parse($response.body)
 if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1) {
     let dataList = body.data;
     dataList.forEach((item)=>{
-        if(item.positionSide === 'LONG' && item.symbol === 'DOGEUSDT'){
-             //开仓价格
-             item.entryPrice = "0.143752";
-             //持仓数量
-            item.positionAmount = "69609"
-         }
-        if(item.positionSide === 'LONG' && item.symbol === 'JASMYUSDT'){
-             //开仓价格
-             item.entryPrice = "0.017881";
-             //持仓数量
-            item.positionAmount = "547016"
-         }
-       // if(item.positionSide === 'LONG' && item.symbol === 'BTCUSDT'){
-            //开仓价格
-           // item.entryPrice = "61446.4";
-            //持仓数量
-          //  item.positionAmount = "17"
-      // }
+         if(item.positionAmount > 0) {
+            item.positionAmount = item.positionAmount * multiple;
+            item.unrealizedProfit = item.unrealizedProfit * multiple;
+            item.cumRealized = item.cumRealized * multiple;
+            item.notionalValue = item.notionalValue * multiple;
+        }
+        // if(item.positionSide === 'LONG' && item.symbol === 'DOGEUSDT'){
+        //     //开仓价格
+        //     item.entryPrice = "0.143752";
+        //     //持仓数量
+        //     item.positionAmount = "69609"
+        // }
+        // if(item.positionSide === 'LONG' && item.symbol === 'JASMYUSDT'){
+        //     //开仓价格
+        //     item.entryPrice = "0.017881";
+        //     //持仓数量
+        //     item.positionAmount = "547016"
+        // }
+        // if(item.positionSide === 'LONG' && item.symbol === 'BTCUSDT'){
+        //开仓价格
+        // item.entryPrice = "61446.4";
+        //持仓数量
+        //  item.positionAmount = "17"
+        // }
     })
     $done({ body: JSON.stringify(body) })
 }else {
