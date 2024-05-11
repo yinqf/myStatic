@@ -1,7 +1,7 @@
 let url = $request.url
 let body = JSON.parse($response.body)
 
-let multiple = 2.6;
+let multiple = 4;
 if (url.indexOf('bapi/composite/v1/private/bigdata/finance/futures/query-position-history') !== -1) {
     let data = body.data;
     if (data.positionHistoryItemList != null) {
