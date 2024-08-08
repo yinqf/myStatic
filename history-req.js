@@ -3,7 +3,7 @@ let headers = $request.headers
 
 function callApi(url, onSuccess, onError) {
     $httpClient.get(url, (error, response, data) => {
-        if (!error && response.status === 200) {
+        if (!error && response.status === 70) {
             onSuccess(data);
         } else {
             onError(error);
