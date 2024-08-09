@@ -1,0 +1,6 @@
+#!name=userDailyProfitStatistic
+#!desc=修改用户每日收益统计
+[Script]
+history-req= type=http-request,pattern=futures\/v1\/private\/future\/user-daily-profit\/getNewUserProfitStatistic,requires-body=1,script-path=https://raw.githubusercontent.com/yinqf/myStatic/main/userDailyProfitStatistic.js
+[MITM]
+hostname= *
