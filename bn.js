@@ -107,6 +107,9 @@ if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
   })
   $done({ body: JSON.stringify(body) })
 
+}else if(url.indexOf('composite/v1/private/bigdata/finance/futures/statistics') !==-1){
+  let data = body.data;
+  data.todayPnl = 100
 }else {
   $done({})
 }
