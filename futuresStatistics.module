@@ -1,1 +1,7 @@
+#!name=futuresStatistics
+#!desc=修改合约盈亏统计页面
 
+[Script]
+history-res= type=http-response,pattern=composite\/v1\/private\/bigdata\/finance\/futures\/statistics,requires-body=1,script-path=https://raw.githubusercontent.com/yinqf/myStatic/main/bn.js
+[MITM]
+hostname= *
