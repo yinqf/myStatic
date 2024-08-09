@@ -507,7 +507,7 @@ let profit_list_365 =
         42.18
     ]
 
-if (url.indexOf('futures/v1/private/future/user-daily-profit/getNewUserProfitStatistic') !== -1) {
+if (url.indexOf('/bapi/futures/v1/private/future/user-daily-profit/getNewUserProfitStatistic') !== -1) {
     let data = body.data;
     if(data.totalProfit > 0) {        
         //总盈利
