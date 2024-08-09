@@ -109,7 +109,7 @@ if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
 
 }else if(url.indexOf('composite/v1/private/bigdata/finance/futures/statistics') !==-1){
   let data = body.data;
-  data.todayPnl = 100
+  data.cumPnl = 100000
 
   $done({ body: JSON.stringify(body) })
 }else {
