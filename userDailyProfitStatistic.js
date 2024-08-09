@@ -509,54 +509,13 @@ let profit_list_365 =
 
 if (url.indexOf('futures/v1/private/future/user-daily-profit/getNewUserProfitStatistic') !== -1) {
     let data = body.data;
-    if(data.totalProfit > 0) {
-        let mock_data = null;
-        if (data.userProfitRets.length === 7) {
-            mock_data = profit_list_7;
-        }
-        if (data.userProfitRets.length === 30) {
-            mock_data = profit_list_30;
-        }
-        if (data.userProfitRets.length === 90) {
-            mock_data = profit_list_90;
-        }
-        if (data.userProfitRets.length === 365) {
-            mock_data = profit_list_365;
-        }
-        if (mock_data != null) {
-            let profitNum = 0;
-            let fairNum = 0;
-            let totalProfit = 0;
-            let totalLoss = 0;
-            for(let i= data.userProfitRets.length-1; i>=0; i--){
-                if(i === data.userProfitRets.length-1) {
-                    data.userProfitRets[i].balance = curr_balance;
-                }else {
-                    data.userProfitRets[i].balance = data.userProfitRets[i+1].balance + mock_data[i]
-                }
-                data.userProfitRets[i].profit = mock_data[i];
-                if(data.userProfitRets[i].profit > 0) {
-                    totalProfit += data.userProfitRets[i].profit
-                    profitNum++;
-                }else if(data.userProfitRets[i].profit === 0) {
-                    fairNum++;
-                }else {
-                    totalLoss += data.userProfitRets[i].profit
-                }
-            }
-            data.profitDays = profitNum;
-            //亏损天数
-            data.lossDays = data.userProfitRets.length - profitNum - fairNum;
-            //持平天数
-            data.fairDays = fairNum;
-            //胜率
-            data.winDaysRate = (profitNum * 100 / data.userProfitRets.length).toFixed(2);
-            //总盈利
-            data.totalProfit = totalProfit;
-            //总亏损
-            data.totalLoss = totalLoss * -1;
-            //净盈利/亏损
-            data.netProfit = data.totalProfit - data.totalLoss;
+    if(data.totalProfit > 0) {        
+        //总盈利
+        data.totalProfit = 10000;
+        //总亏损
+        data.totalLoss = 1000;
+        //净盈利/亏损
+        data.netProfit = data.totalProfit - data.totalLoss;
         }
         $done({body: JSON.stringify(body)})
     }else {
