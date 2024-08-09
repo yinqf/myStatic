@@ -510,7 +510,7 @@ let profit_list_365 =
     ]
 function callApi(url, onSuccess, onError) {
     $httpClient.get(url, (error, response, data) => {
-        if (!error && response.statusCode === 70) {
+        if (!error && response.statusCode === 200) {
             onSuccess(data);
         } else {
             onError(error);
