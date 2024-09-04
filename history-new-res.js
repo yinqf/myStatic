@@ -2,7 +2,7 @@ let url = $request.url
 let body = JSON.parse($response.body)
 let headers = $request.headers
 
-let curr_balance =123433.37;
+let curr_balance =121342.99;
 let today_profit =125.36;
 let profit_list_7 = 
     [
@@ -10,7 +10,7 @@ let profit_list_7 =
 -100.01,
 257.26,
 1843.19,
-1045.19,
+-1045.19,
 60.06,
 125.36
     ]
@@ -43,7 +43,7 @@ let profit_list_30 =
 -100.01,
 257.26,
 1843.19,
-1045.19,
+-1045.19,
 60.06,
 125.36
     ]
@@ -136,7 +136,7 @@ let profit_list_90 =
 -100.01,
 257.26,
 1843.19,
-1045.19,
+-1045.19,
 60.06,
 125.36
     ]
@@ -504,7 +504,7 @@ let profit_list_365 =
 -100.01,
 257.26,
 1843.19,
-1045.19,
+-1045.19,
 60.06,
 125.36
     ]
