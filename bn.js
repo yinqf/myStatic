@@ -12,11 +12,11 @@ let ethBalance = '0.0028';
 //现货BNB数量
 let bnbBalance = '0.2743553';
 //btc价格
-let btcPrice = '60856.14';
+let btcPrice = '56623.14';
 //eth价格
-let ethPrice = '2677.23';
+let ethPrice = '2452.23';
 //bnb价格
-let bnbPrice = '510.8';
+let bnbPrice = '503.8';
 //合约btc数量
 let btcNum = Number(balance)/Number(btcPrice);
 //现货btc数量
