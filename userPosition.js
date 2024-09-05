@@ -3,6 +3,7 @@ let body = JSON.parse($response.body)
 
 if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1) {
     let dataList = body.data;
+    //更改币安所有已持仓倍数
     let multiple = 100;
     dataList.forEach((item)=>{
          if(item.positionAmount > 0) {
