@@ -10,6 +10,8 @@ if (url.indexOf('bapi/futures/v5/private/future/user-data/user-position') !== -1
             item.unrealizedProfit = item.unrealizedProfit * multiple;
             item.cumRealized = item.cumRealized * multiple;
             item.notionalValue = item.notionalValue * multiple;
+            item.initialMargin = item.initialMargin * multiple;
+            item.positionInitialMargin = item.positionInitialMargin * multiple;
         }
         // if(item.positionSide === 'LONG' && item.symbol === 'DOGEUSDT'){
         //     //开仓价格
