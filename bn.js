@@ -4,7 +4,7 @@ let body = JSON.parse($response.body)
 //合约USDT余额
 let balance = '269113.68';
 //现货USDT数量
-let uBalance = '100';
+let uBalance = '123652.33';
 //现货BTC数量
 let btcBalance = '0.00015';
 //现货ETH数量
