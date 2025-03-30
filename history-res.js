@@ -531,7 +531,7 @@ callApi("https://doc.ccore.cc/cache/get?id="+headers['x-trace-id'],function (res
             let beginTime = requestBody.beginTime;
             let endTime = requestBody.endTime;
             let business = requestBody.business;
-            let diff = (endTime - beginTime) / 60 / 60 / 24 / 1000 + 1;
+            let diff = Math.floor((endTime - beginTime)/60/60/24/1000 + 1);
 
             let data = body.data;
             let balanceList = [];
