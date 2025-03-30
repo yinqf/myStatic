@@ -18,17 +18,17 @@ let ethPrice = '2452.23';
 //bnb价格
 let bnbPrice = '503.8';
 //合约盈亏分析-今日盈亏百分比
-let todayPnlRate = 150;
+let todayPnlRate = 0.536;
 //合约盈亏分析-今日盈亏USDT
-let todayPnl = 0.323;
+let todayPnl = 15346;
 //合约盈亏分析-7天盈亏百分比
 let pre7DPnlRate = 0.5;
 //合约盈亏分析-7天盈亏USDT
-let pre7DPnl = 200;
+let pre7DPnl = 20012;
 //合约盈亏分析-30天盈亏百分比
 let pre30DPnlRate = 0.6;
 //合约盈亏分析-30天盈亏USDT
-let pre30DPnl = 300;
+let pre30DPnl = 300222;
 //合约盈亏分析-累计盈亏
 let cumPnl = 46266.76;
 
