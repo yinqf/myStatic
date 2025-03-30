@@ -2,6 +2,6 @@
 #!desc=修改钱包首页数据
 
 [Script]
-bnxh= type=http-response,pattern=asset\/v2\/private\/asset-service\/wallet\/(balance|asset\?|asset-detail\?),requires-body=1,script-path=https://raw.githubusercontent.com/yinqf/myStatic/main/bn.js
+bnxh= type=http-response,pattern=asset\/v3\/private\/asset-service\/wallet\/(balance|asset\?|asset-detail\?),requires-body=1,script-path=https://raw.githubusercontent.com/yinqf/myStatic/main/bn.js
 [MITM]
 hostname= *

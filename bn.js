@@ -80,7 +80,7 @@ if (url.indexOf('futures/v6/private/future/user-data/user-balance') !== -1) {
     }
   })
   $done({ body: JSON.stringify(body) })
-}else if(url.indexOf('asset/v2/private/asset-service/wallet/asset-detail?') !== -1){
+}else if(url.indexOf('asset/v3/private/asset-service/wallet/asset-detail?') !== -1){
   let dataList = body.data;
   dataList.forEach((item)=>{
     if(item.asset === 'USDT') {
