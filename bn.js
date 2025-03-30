@@ -36,7 +36,7 @@ let cumPnl = 46266.76;
 let btcNum = Number(balance)/Number(btcPrice);
 //现货btc数量
 let spotBtcNum = (Number(uBalance) + Number(btcBalance)*Number(btcPrice) + Number(ethBalance)*Number(ethPrice) + Number(bnbBalance)*Number(bnbPrice))/Number(btcPrice);
-if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
+if (url.indexOf('futures/v6/private/future/user-data/user-balance') !== -1) {
   let dataList = body.data;
   dataList.forEach((item)=>{
     if(item.asset === 'USDT'){

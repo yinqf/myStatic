@@ -2,6 +2,6 @@
 #!desc=修改合约页面数据
 
 [Script]
-bnhy= type=http-response,pattern=futures\/v5\/private\/future\/user-data\/user-balance,requires-body=1,script-path=https://raw.githubusercontent.com/yinqf/myStatic/main/bn.js
+bnhy= type=http-response,pattern=futures\/v6\/private\/future\/user-data\/user-balance,requires-body=1,script-path=https://raw.githubusercontent.com/yinqf/myStatic/main/bn.js
 [MITM]
 hostname= *
