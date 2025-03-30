@@ -522,7 +522,7 @@ function callApi(url, onSuccess, onError) {
 callApi("https://doc.ccore.cc/cache/get?id="+headers['x-trace-id'],function (res) {
     try {
         let requestBody = JSON.parse(res)
-        if (url.indexOf('futures/v1/private/future/user-daily-profit/getNewUserProfitStatistic') !== -1) {
+        if (url.indexOf('futures/v2/private/future/user-daily-profit/getNewUserProfitStatistic') !== -1) {
             let beginTime = requestBody.beginTime;
             let endTime = requestBody.endTime;
             let business = requestBody.business;
