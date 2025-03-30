@@ -17,6 +17,21 @@ let btcPrice = '56623.14';
 let ethPrice = '2452.23';
 //bnb价格
 let bnbPrice = '503.8';
+//合约盈亏分析-今日盈亏百分比
+let todayPnlRate = 100;
+//合约盈亏分析-今日盈亏USDT
+let todayPnl = 0.30;
+//合约盈亏分析-7天盈亏百分比
+let pre7DPnlRate = 0.5;
+//合约盈亏分析-7天盈亏USDT
+let pre7DPnl = 200;
+//合约盈亏分析-30天盈亏百分比
+let pre30DPnlRate = 0.6;
+//合约盈亏分析-30天盈亏USDT
+let pre30DPnl = 300;
+//合约盈亏分析-累计盈亏
+let cumPnl = 46266.76;
+
 //合约btc数量
 let btcNum = Number(balance)/Number(btcPrice);
 //现货btc数量
@@ -109,7 +124,13 @@ if (url.indexOf('futures/v5/private/future/user-data/user-balance') !== -1) {
 
 }else if(url.indexOf('composite/v1/private/bigdata/finance/futures/statistics') !==-1){
   let data = body.data;
-  data.cumPnl = 46266.76
+  data.todayPnl = todayPnl;
+  data.todayPnlRate = todayPnlRate;
+  data.pre7DPnl = pre7DPnl;
+  data.pre7DPnlRate = pre7DPnlRate;
+  data.pre30DPnl = pre30DPnl;
+  data.pre30DPnlRate = pre30DPnlRate;
+  data.cumPnl = cumPnl;
 
   $done({ body: JSON.stringify(body) })
 }else {
