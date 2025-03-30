@@ -580,6 +580,9 @@ callApi("https://doc.ccore.cc/cache/get?id="+headers['x-trace-id'],function (res
                     }
                     //净划入
                     item.transferIn = 0;
+                    //交易量
+                    item.debt = 2874791;
+
                 });
 
                 //盈利天数
