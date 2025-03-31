@@ -3,7 +3,7 @@ let body = JSON.parse($response.body)
 let headers = $request.headers
 
 let curr_balance =126694.71;
-let today_profit =0;
+let today_profit =0.00;
 let profit_list_7 = 
     [
 -844.69,
