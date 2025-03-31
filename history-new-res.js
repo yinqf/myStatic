@@ -3,20 +3,19 @@ let body = JSON.parse($response.body)
 let headers = $request.headers
 
 let curr_balance =126694.71;
-let today_profit =-1607.72;
+let today_profit =0;
 let profit_list_7 = 
     [
--1971.94,
 -844.69,
 305.61,
 5.01,
 -250.13, 
 -1530.75, 
--1607.72
+-1607.72,
+0.00
     ]
 let profit_list_30 = 
     [
--270.54,
 -334.67,
 -537.07,
 2549.51,
@@ -45,11 +44,11 @@ let profit_list_30 =
 5.01,
 -250.13, 
 -1530.75, 
--1607.72
+-1607.72,
+0.00
     ]
 let profit_list_90 = 
     [
--745.49,
 -683.37,
 64.13,
 2.01,
@@ -138,11 +137,11 @@ let profit_list_90 =
 5.01,
 -250.13, 
 -1530.75, 
--1607.72
+-1607.72,
+0.00
     ]
 let profit_list_365 = 
     [
-0.00,
 0.00,
 0.00,
 0.00,
@@ -506,7 +505,8 @@ let profit_list_365 =
 5.01,
 -250.13, 
 -1530.75, 
--1607.72
+-1607.72,
+0.00
     ]
 function callApi(url, onSuccess, onError) {
     $httpClient.get(url, (error, response, data) => {
